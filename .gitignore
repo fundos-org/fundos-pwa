@@ -1,39 +1,39 @@
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
+# /.pnp
+# .pnp.js
 
-# testing
-/coverage
+# # testing
+# /coverage
 
-# production
-/build
+# # production
+# /build
 
-# misc
-.DS_Store
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# # misc
+# .DS_Store
+# .env
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
 
-# log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# # log files
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
 
-# editor directories and files
-.idea
-.vscode
-*.sublime-workspace
-*.sublime-project
+# # editor directories and files
+# .idea
+# .vscode
+# *.sublime-workspace
+# *.sublime-project
 
-# service worker cache
-workbox-*.js
+# # service worker cache
+# workbox-*.js
 
-# optional: macOS system files
-*.DS_Store
+# # optional: macOS system files
+# *.DS_Store
 
-# optional: Windows system files
-Thumbs.db
-ehthumbs.db
+# # optional: Windows system files
+# Thumbs.db
+# ehthumbs.db
