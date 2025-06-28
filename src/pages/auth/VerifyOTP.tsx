@@ -1,0 +1,1 @@
+import React from "react"; const VerifyOTP: React.FC = () => <div style={{minHeight:"100vh",background:"#1a1a1a",color:"white",display:"flex",alignItems:"center",justifyContent:"center"}}><h1>VerifyOTP Page</h1></div>; export default VerifyOTP;

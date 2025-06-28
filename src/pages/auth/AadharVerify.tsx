@@ -1,0 +1,1 @@
+import React from "react"; const AadharVerify: React.FC = () => <div style={{minHeight:"100vh",background:"#1a1a1a",color:"white",display:"flex",alignItems:"center",justifyContent:"center"}}><h1>AadharVerify Page</h1></div>; export default AadharVerify;

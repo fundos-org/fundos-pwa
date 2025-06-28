@@ -1,0 +1,1 @@
+import React from "react"; const ContributionAgreement: React.FC = () => <div style={{minHeight:"100vh",background:"#1a1a1a",color:"white",display:"flex",alignItems:"center",justifyContent:"center"}}><h1>ContributionAgreement Page</h1></div>; export default ContributionAgreement;

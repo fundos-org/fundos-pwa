@@ -1,0 +1,1 @@
+import React from "react"; const Profile: React.FC = () => <div style={{minHeight:"100vh",background:"#1a1a1a",color:"white",display:"flex",alignItems:"center",justifyContent:"center"}}><h1>Profile Page</h1></div>; export default Profile;
