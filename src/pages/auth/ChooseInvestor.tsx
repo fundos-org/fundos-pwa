@@ -40,7 +40,7 @@ const ChooseInvestor: React.FC = () => {
     }
 
     try {
-      const response = await fetch('http://43.205.36.168/api/v0/test/user/choose-investor-type', {
+      const response = await fetch('https://43.205.36.168/api/v0/test/user/choose-investor-type', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ const ChooseInvestor: React.FC = () => {
     }
 
     try {
-      const response = await fetch('http://43.205.36.168/api/v0/test/user/declaration', {
+      const response = await fetch('https://43.205.36.168/api/v0/test/user/declaration', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

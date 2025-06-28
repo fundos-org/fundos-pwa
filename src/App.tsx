@@ -98,7 +98,7 @@ const PhoneNumber: React.FC<PageProps> = ({ showNotification }) => {
 
     try {
       const response = await fetch(
-        `http://43.205.36.168/api/v0/test/user/phone/otp/send?phone_number=${phoneNumber}&invite_code=${invitationCode}`
+        `https://43.205.36.168/api/v0/test/user/phone/otp/send?phone_number=${phoneNumber}&invite_code=${invitationCode}`
       );
       const data = await response.json();
       
@@ -312,7 +312,7 @@ const VerifyPhoneOTP: React.FC<PageProps> = ({ showNotification }) => {
 
     try {
       const response = await fetch(
-        `http://43.205.36.168/api/v0/test/user/phone/otp/verify?phone_number=${phoneNumber}&otp=${otpValue}&invite_code=${invitationCode}`
+        `https://43.205.36.168/api/v0/test/user/phone/otp/verify?phone_number=${phoneNumber}&otp=${otpValue}&invite_code=${invitationCode}`
       );
       const data = await response.json();
       
@@ -490,7 +490,7 @@ const EmailEntry: React.FC<PageProps> = ({ showNotification }) => {
     }
 
     try {
-      const response = await fetch('http://43.205.36.168/api/v0/test/user/email/otp/send', {
+      const response = await fetch('https://43.205.36.168/api/v0/test/user/email/otp/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -653,7 +653,7 @@ const VerifyEmailOTP: React.FC<PageProps> = ({ showNotification }) => {
     }
 
     try {
-      const response = await fetch('http://43.205.36.168/api/v0/test/user/email/otp/verify', {
+      const response = await fetch('https://43.205.36.168/api/v0/test/user/email/otp/verify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -831,7 +831,7 @@ const ChooseInvestor: React.FC<PageProps> = ({ showNotification }) => {
     }
 
     try {
-      const response = await fetch('http://43.205.36.168/api/v0/test/user/choose-investor-type', {
+      const response = await fetch('https://43.205.36.168/api/v0/test/user/choose-investor-type', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -864,7 +864,7 @@ const ChooseInvestor: React.FC<PageProps> = ({ showNotification }) => {
     }
 
     try {
-      const response = await fetch('http://43.205.36.168/api/v0/test/user/declaration', {
+      const response = await fetch('https://43.205.36.168/api/v0/test/user/declaration', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1246,7 +1246,7 @@ const AadhaarVerification: React.FC<PageProps> = ({ showNotification }) => {
 
   const handleVerifyAadhaar = async () => {
     try {
-      const response = await fetch(`http://43.205.36.168/api/v2/live/kyc/generate-url?user_id=${userId}`, {
+      const response = await fetch(`https://43.205.36.168/api/v2/live/kyc/generate-url?user_id=${userId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1274,7 +1274,7 @@ const AadhaarVerification: React.FC<PageProps> = ({ showNotification }) => {
 
   const handleProceedNext = async () => {
     try {
-      const response = await fetch(`http://43.205.36.168/api/v2/live/kyc/details?user_id=${userId}`, {
+      const response = await fetch(`https://43.205.36.168/api/v2/live/kyc/details?user_id=${userId}`, {
         method: 'GET',
       });
       const data = await response.json();
@@ -1467,7 +1467,7 @@ const VerifyAadhaarOTP: React.FC<PageProps> = ({ showNotification }) => {
 
     setLoading(true);
     try {
-      const response = await fetch('http://43.205.36.168/api/v1/live/kyc/aadhaar/otp/verify', {
+      const response = await fetch('https://43.205.36.168/api/v1/live/kyc/aadhaar/otp/verify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1630,7 +1630,7 @@ const PANVerification: React.FC<PageProps> = ({ showNotification }) => {
 
     setLoading(true);
     try {
-      const response = await fetch('http://43.205.36.168/api/v1/live/kyc/pan/verify', {
+      const response = await fetch('https://43.205.36.168/api/v1/live/kyc/pan/verify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1826,7 +1826,7 @@ const BankDetails: React.FC<PageProps> = ({ showNotification }) => {
 
     setLoading(true);
     try {
-      const response = await fetch('http://43.205.36.168/api/v1/live/kyc/pan/bank/link/verify', {
+      const response = await fetch('https://43.205.36.168/api/v1/live/kyc/pan/bank/link/verify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -2060,7 +2060,7 @@ const ProfessionalBackground: React.FC<PageProps> = ({ showNotification }) => {
     }
 
     try {
-      const response = await fetch('http://43.205.36.168/api/v0/test/user/professional-background', {
+      const response = await fetch('https://43.205.36.168/api/v0/test/user/professional-background', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -2231,7 +2231,7 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
       if (storedUserId) {
         setUserId(storedUserId);
         try {
-          const response = await fetch(`http://43.205.36.168/api/v0/test/user/details?user_id=${storedUserId}`);
+          const response = await fetch(`https://43.205.36.168/api/v0/test/user/details?user_id=${storedUserId}`);
           const data = await response.json();
           
           if (data.success) {
@@ -2306,7 +2306,7 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
         father_name: userProfile.father_name
       };
 
-      const response = await fetch('http://43.205.36.168/api/v0/test/user/details/update', {
+      const response = await fetch('https://43.205.36.168/api/v0/test/user/details/update', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -2535,7 +2535,7 @@ const ContributionAgreement: React.FC<PageProps> = ({ showNotification }) => {
     }
 
     try {
-      const response = await fetch('http://43.205.36.168/api/v0/test/user/sign-agreement', {
+      const response = await fetch('https://43.205.36.168/api/v0/test/user/sign-agreement', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -2710,7 +2710,7 @@ const UploadPhoto: React.FC<PageProps> = ({ showNotification }) => {
       const formData = new FormData();
       formData.append('image', selectedImage); // API expects 'image' field name
 
-      const response = await fetch(`http://43.205.36.168/api/v0/test/user/upload-photo?expiration=3600&user_id=${userId}`, {
+      const response = await fetch(`https://43.205.36.168/api/v0/test/user/upload-photo?expiration=3600&user_id=${userId}`, {
         method: 'POST',
         body: formData,
       });
@@ -2987,11 +2987,11 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
 
       try {
         console.log('Fetching deals for user:', storedUserId);
-        const response = await fetch(`http://43.205.36.168/api/v1/live/deals/user-deals?user_id=${storedUserId}`);
+        const response = await fetch(`https://43.205.36.168/api/v1/live/deals/user-deals?user_id=${storedUserId}`);
         console.log('Response status:', response.status);
         
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`https error! status: ${response.status}`);
         }
         
         const data = await response.json();

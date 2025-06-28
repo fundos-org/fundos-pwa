@@ -33,7 +33,7 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
     const fetchDealDetails = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://43.205.36.168/api/v1/live/deals/?deal_id=${dealId}`);
+        const response = await fetch(`https://43.205.36.168/api/v1/live/deals/?deal_id=${dealId}`);
         
         if (!response.ok) {
           throw new Error('Failed to fetch deal details');
@@ -73,7 +73,7 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
       }
 
       // Check MCA status first
-      const mcaResponse = await fetch(`http://43.205.36.168/api/v1/live/deals/mca/status?user_id=${userId}`);
+      const mcaResponse = await fetch(`https://43.205.36.168/api/v1/live/deals/mca/status?user_id=${userId}`);
       
       if (!mcaResponse.ok) {
         throw new Error('Failed to check MCA status');
@@ -106,7 +106,7 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
         return;
       }
 
-      const response = await fetch(`http://43.205.36.168/api/v1/live/deals/interaction?deal_id=${dealId}&user_id=${userId}&not_interested=true`, {
+      const response = await fetch(`https://43.205.36.168/api/v1/live/deals/interaction?deal_id=${dealId}&user_id=${userId}&not_interested=true`, {
         method: 'POST',
       });
       
