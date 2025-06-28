@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -8,11 +8,6 @@ body {
   background-color: #1a1a1a;
   color: white;
   overflow-x: hidden;
-  /* Better mobile text rendering */
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  width: 250px;
 }
 
 code {
@@ -84,21 +79,11 @@ code {
   }
 }
 
-/* Disable zoom on inputs for iOS and improve mobile experience */
+/* Disable zoom on inputs for iOS */
 input[type="tel"],
 input[type="text"],
-input[type="number"],
-input[type="email"],
-input[type="password"],
-select,
-textarea {
+input[type="number"] {
   font-size: 16px;
-  /* Prevent zoom on focus in mobile Safari */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  /* Better touch targets */
-  min-height: 44px;
 }
 
 /* Remove default input styling */

@@ -55,7 +55,13 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
   }, [dealId, showNotification]);
 
   const convertToCrores = (value: number) => {
-    return `${(value / 10000000).toFixed(2)} Cr`;
+    if (value >= 10000000) {
+      return `${(value / 10000000).toFixed(1)} Cr`;
+    } else if (value >= 100000) {
+      return `${(value / 100000).toFixed(1)} L`;
+    } else {
+      return `${value.toLocaleString('en-IN')}`;
+    }
   };
 
   const handleCommit = async () => {
@@ -226,41 +232,39 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={onBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)',
+        maxHeight: '90vh',
+        overflow: 'auto'
       }}>
+        {/* Header */}
+        <button 
+          onClick={onBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
 
         <h1 style={{
           color: '#fff',
@@ -305,7 +309,11 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
 
         {/* Deal Details Card */}
         <div style={{
-          marginBottom: '2rem'
+          background: 'rgba(255, 255, 255, 0.1)',
+          borderRadius: '8px',
+          padding: '1.5rem',
+          marginBottom: '2rem',
+          border: '1px solid rgba(255, 255, 255, 0.2)'
         }}>
           <h2 style={{
             color: '#fff',

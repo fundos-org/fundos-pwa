@@ -131,46 +131,38 @@ const PhoneNumber: React.FC<PageProps> = ({ showNotification }) => {
     }
   };
 
-    return (
+  return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
         
               <h1 style={{ 
         marginBottom: '1rem',
@@ -279,7 +271,7 @@ const PhoneNumber: React.FC<PageProps> = ({ showNotification }) => {
             Proceed
           </button>
         </form>
-        </div>
+      </div>
     </div>
   );
 };
@@ -374,44 +366,36 @@ const VerifyPhoneOTP: React.FC<PageProps> = ({ showNotification }) => {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
         
         <h1 style={{ 
           marginBottom: '1rem',
@@ -450,8 +434,6 @@ const VerifyPhoneOTP: React.FC<PageProps> = ({ showNotification }) => {
                   key={index}
                   id={`phone-otp-${index}`}
                   type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
                   value={digit}
                   onChange={(e) => handleOTPChange(index, e.target.value)}
                   onKeyDown={(e) => handleKeyDown(index, e)}
@@ -491,7 +473,7 @@ const VerifyPhoneOTP: React.FC<PageProps> = ({ showNotification }) => {
             Verify
           </button>
         </form>
-        </div>
+      </div>
     </div>
   );
 };
@@ -502,7 +484,7 @@ const EmailEntry: React.FC<PageProps> = ({ showNotification }) => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    if (!isValidEmail(email)) {
+    if (email.length < 3 || !email.includes('@')) {
       showNotification('Please enter a valid email address', 'error');
       return;
     }
@@ -535,51 +517,38 @@ const EmailEntry: React.FC<PageProps> = ({ showNotification }) => {
     window.location.reload();
   };
 
-  const isValidEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
         
         <h1 style={{ 
           marginBottom: '1rem',
@@ -627,16 +596,16 @@ const EmailEntry: React.FC<PageProps> = ({ showNotification }) => {
           
           <button 
             type="submit"
-            disabled={!isValidEmail(email)}
+            disabled={email.length < 3}
             style={{
-              background: isValidEmail(email) ? '#00fb57' : '#374151',
-              color: isValidEmail(email) ? '#1a1a1a' : '#6b7280',
+              background: email.length >= 3 ? '#00fb57' : '#374151',
+              color: email.length >= 3 ? '#1a1a1a' : '#6b7280',
               border: 'none',
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
               borderRadius: '8px',
-              cursor: isValidEmail(email) ? 'pointer' : 'not-allowed',
+              cursor: email.length >= 3 ? 'pointer' : 'not-allowed',
               width: '100%',
               transition: 'all 0.3s ease'
             }}
@@ -644,7 +613,7 @@ const EmailEntry: React.FC<PageProps> = ({ showNotification }) => {
             Next
           </button>
         </form>
-        </div>
+      </div>
     </div>
   );
 };
@@ -717,44 +686,36 @@ const VerifyEmailOTP: React.FC<PageProps> = ({ showNotification }) => {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
         
         <h1 style={{ 
           marginBottom: '1rem',
@@ -793,8 +754,6 @@ const VerifyEmailOTP: React.FC<PageProps> = ({ showNotification }) => {
                   key={index}
                   id={`email-otp-${index}`}
                   type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
                   value={digit}
                   onChange={(e) => handleOTPChange(index, e.target.value)}
                   onKeyDown={(e) => handleKeyDown(index, e)}
@@ -838,7 +797,7 @@ const VerifyEmailOTP: React.FC<PageProps> = ({ showNotification }) => {
             Verify →
           </button>
         </form>
-        </div>
+      </div>
     </div>
   );
 };
@@ -944,51 +903,43 @@ const ChooseInvestor: React.FC<PageProps> = ({ showNotification }) => {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '500px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
         
         <h1 style={{ 
           marginBottom: '1rem',
           fontSize: '2rem',
           fontWeight: 'bold'
         }}>
-          Choose Investor Type
+          Choose investor type
         </h1>
         
         <p style={{ 
@@ -1084,48 +1035,38 @@ const ChooseInvestor: React.FC<PageProps> = ({ showNotification }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+            background: 'rgba(0, 0, 0, 0.8)',
             display: 'flex',
-            flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             zIndex: 1000,
-            height: '100vh',
-            width: '100vw',
-            color: 'white',
-            padding: '1rem',
-            overflow: 'hidden',
-            boxSizing: 'border-box'
+            padding: '2rem'
           }}>
-            <button 
-              onClick={() => setShowModal(false)}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                color: '#9ca3af',
-                fontSize: '2rem',
-                cursor: 'pointer',
-                position: 'absolute',
-                top: '1rem',
-                right: '1rem',
-                zIndex: 10
-              }}
-            >
-              ✕
-            </button>
-
             <div style={{
-              flex: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
+              background: '#1a1a1a',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '12px',
               padding: '2rem',
-              maxHeight: '100%',
-              overflowY: 'auto',
+              maxWidth: '500px',
               width: '100%',
-              maxWidth: '600px'
+              maxHeight: '80vh',
+              overflowY: 'auto'
             }}>
-              <h2 style={{ color: 'white', margin: '0 0 2rem 0', fontSize: '2rem', fontWeight: 'bold' }}>Declaration</h2>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                <h2 style={{ color: 'white', margin: 0 }}>Declaration</h2>
+                <button 
+                  onClick={() => setShowModal(false)}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: '#9ca3af',
+                    fontSize: '1.5rem',
+                    cursor: 'pointer'
+                  }}
+                >
+                  ✕
+                </button>
+              </div>
               
               <p style={{ color: '#e5e7eb', marginBottom: '1.5rem', lineHeight: '1.6' }}>
                 I am an individual investor who has net tangible assets of at least two crore rupees excluding value of my principal residence, and:
@@ -1133,13 +1074,13 @@ const ChooseInvestor: React.FC<PageProps> = ({ showNotification }) => {
 
               <div style={{ marginBottom: '2rem' }}>
                 <p style={{ color: '#e5e7eb', margin: '0.5rem 0' }}>
-                  1. Have Early-Stage Investment Experience, or
+                  1. have early-stage investment experience, or
                 </p>
                 <p style={{ color: '#e5e7eb', margin: '0.5rem 0' }}>
-                  2. Have Experience As A Serial Entrepreneur, or
+                  2. have experience as a serial entrepreneur, or
                 </p>
                 <p style={{ color: '#e5e7eb', margin: '0.5rem 0' }}>
-                  3. Am A Senior Management Professional(s) With At Least Ten Years Of Experience.
+                  3. am a senior management professional(s) with at least ten years of experience.
                 </p>
               </div>
 
@@ -1154,24 +1095,21 @@ const ChooseInvestor: React.FC<PageProps> = ({ showNotification }) => {
                 }}
               >
                 <div style={{
-                  minWidth: '22px',
-                  minHeight: '22px',
-                  width: '22px',
-                  height: '22px',
+                  width: '20px',
+                  height: '20px',
                   border: `2px solid ${isChecked ? '#00fb57' : '#6b7280'}`,
-                  borderRadius: '50%',
+                  borderRadius: '4px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   background: isChecked ? '#00fb57' : 'transparent',
-                  marginTop: '2px',
-                  flexShrink: 0
+                  marginTop: '2px'
                 }}>
                   {isChecked && <span style={{ color: '#1a1a1a', fontSize: '12px' }}>✓</span>}
                 </div>
                 <div>
                   <span style={{ color: '#e5e7eb', lineHeight: '1.5' }}>
-                    I Confirm That I Qualify As An Angel Investor Based On The Above Condition(s)
+                    I confirm that I qualify as an Angel Investor based on the above condition(s)
                     <span style={{ color: '#ef4444' }}>*</span>
                   </span>
                 </div>
@@ -1202,7 +1140,7 @@ const ChooseInvestor: React.FC<PageProps> = ({ showNotification }) => {
             </div>
           </div>
         )}
-        </div>
+      </div>
     </div>
   );
 };
@@ -1222,44 +1160,36 @@ const KYCStart: React.FC<PageProps> = ({ showNotification }) => {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
 
         <h1 style={{
           color: '#fff',
@@ -1267,7 +1197,7 @@ const KYCStart: React.FC<PageProps> = ({ showNotification }) => {
           fontWeight: 'bold',
           marginBottom: '10px'
         }}>
-          Secure Your Investments
+          Secure your Investments
         </h1>
         
         <p style={{
@@ -1296,7 +1226,7 @@ const KYCStart: React.FC<PageProps> = ({ showNotification }) => {
         >
           Complete KYC Now
         </button>
-        </div>
+      </div>
     </div>
   );
 };
@@ -1369,44 +1299,36 @@ const AadhaarVerification: React.FC<PageProps> = ({ showNotification }) => {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
 
         <h1 style={{
           color: '#fff',
@@ -1642,8 +1564,6 @@ const VerifyAadhaarOTP: React.FC<PageProps> = ({ showNotification }) => {
                 key={index}
                 id={`otp-${index}`}
                 type="text"
-                inputMode="numeric"
-                pattern="[0-9]*"
                 value={digit}
                 onChange={(e) => handleOTPChange(index, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(index, e)}
@@ -1701,16 +1621,10 @@ const PANVerification: React.FC<PageProps> = ({ showNotification }) => {
     }
   }, []);
 
-  // PAN format validation: 5 letters + 4 digits + 1 letter (e.g., ABCDE1234F)
-  const isValidPAN = (panNumber: string) => {
-    const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
-    return panRegex.test(panNumber);
-  };
-
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    if (!isValidPAN(pan)) {
-      showNotification('Please enter a valid PAN number (e.g., ABCDE1234F)', 'error');
+    if (pan.length !== 10) {
+      showNotification('Please enter a valid 10-character PAN number', 'error');
       return;
     }
 
@@ -1787,44 +1701,36 @@ const PANVerification: React.FC<PageProps> = ({ showNotification }) => {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
 
         <h1 style={{
           color: '#fff',
@@ -1832,7 +1738,7 @@ const PANVerification: React.FC<PageProps> = ({ showNotification }) => {
           fontWeight: 'bold',
           marginBottom: '10px'
         }}>
-          Enter Your PAN Card
+          Enter your Pan Card
         </h1>
         
         <p style={{
@@ -1850,9 +1756,7 @@ const PANVerification: React.FC<PageProps> = ({ showNotification }) => {
               type="text" 
               value={pan}
               onChange={handlePanChange}
-              placeholder="Enter PAN (e.g. ABCDE1234F)"
-              autoCapitalize="characters"
-              autoComplete="off"
+              placeholder="Enter your pan number"
               style={{
                 width: '100%',
                 padding: '1rem',
@@ -1861,30 +1765,32 @@ const PANVerification: React.FC<PageProps> = ({ showNotification }) => {
                 border: '1px solid #374151',
                 background: '#374151',
                 color: 'white',
-                outline: 'none',
-                textTransform: 'uppercase',
-                letterSpacing: '1px'
+                outline: 'none'
               }}
             />
           </div>
           
           <button 
             type="submit"
-            disabled={!isValidPAN(pan)}
+            disabled={pan.length !== 10}
             style={{
-              background: isValidPAN(pan) ? '#00fb57' : '#374151',
-              color: isValidPAN(pan) ? '#1a1a1a' : '#6b7280',
+              background: pan.length === 10 ? '#00fb57' : '#374151',
+              color: pan.length === 10 ? '#1a1a1a' : '#6b7280',
               border: 'none',
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
               borderRadius: '8px',
-              cursor: isValidPAN(pan) ? 'pointer' : 'not-allowed',
+              cursor: pan.length === 10 ? 'pointer' : 'not-allowed',
               width: '100%',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '10px'
             }}
           >
-            Next
+            Next →
           </button>
         </form>
       </div>
@@ -1911,26 +1817,10 @@ const BankDetails: React.FC<PageProps> = ({ showNotification }) => {
     }
   }, []);
 
-  // Bank account number validation (9-18 digits, numeric only)
-  const isValidAccountNumber = (accNumber: string) => {
-    const accountRegex = /^[0-9]{9,18}$/;
-    return accountRegex.test(accNumber);
-  };
-
-  // IFSC code validation (4 letters + 1 digit + 6 alphanumeric)
-  const isValidIFSC = (ifsc: string) => {
-    const ifscRegex = /^[A-Z]{4}[0-9]{1}[A-Z0-9]{6}$/;
-    return ifscRegex.test(ifsc);
-  };
-
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    if (!isValidAccountNumber(accountNumber)) {
-      showNotification('Please enter a valid bank account number (9-18 digits)', 'error');
-      return;
-    }
-    if (!isValidIFSC(ifscCode)) {
-      showNotification('Please enter a valid IFSC code (e.g., SBIN0001234)', 'error');
+    if (!accountNumber || !ifscCode) {
+      showNotification('Please fill in all bank details', 'error');
       return;
     }
 
@@ -1971,16 +1861,8 @@ const BankDetails: React.FC<PageProps> = ({ showNotification }) => {
     window.location.reload();
   };
 
-  const handleAccountNumberChange = (e: any) => {
-    const value = e.target.value.replace(/[^0-9]/g, ''); // Allow only numbers
-    setAccountNumber(value);
-  };
-
   const handleIfscChange = (e: any) => {
-    const value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); // Allow only alphanumeric
-    if (value.length <= 11) { // IFSC is 11 characters
-      setIfscCode(value);
-    }
+    setIfscCode(e.target.value.toUpperCase());
   };
 
   if (loading) {
@@ -2013,44 +1895,36 @@ const BankDetails: React.FC<PageProps> = ({ showNotification }) => {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
 
         <h1 style={{
           color: '#fff',
@@ -2074,10 +1948,8 @@ const BankDetails: React.FC<PageProps> = ({ showNotification }) => {
           <div style={{ marginBottom: '1.5rem' }}>
             <input 
               type="text" 
-              inputMode="numeric"
-              pattern="[0-9]*"
               value={accountNumber}
-              onChange={handleAccountNumberChange}
+              onChange={(e) => setAccountNumber(e.target.value)}
               placeholder="Enter your bank account number"
               style={{
                 width: '100%',
@@ -2098,8 +1970,6 @@ const BankDetails: React.FC<PageProps> = ({ showNotification }) => {
               value={ifscCode}
               onChange={handleIfscChange}
               placeholder="Enter your IFSC"
-              autoCapitalize="characters"
-              autoComplete="off"
               style={{
                 width: '100%',
                 padding: '1rem',
@@ -2108,30 +1978,28 @@ const BankDetails: React.FC<PageProps> = ({ showNotification }) => {
                 border: '1px solid #374151',
                 background: '#374151',
                 color: 'white',
-                outline: 'none',
-                textTransform: 'uppercase',
-                letterSpacing: '1px'
+                outline: 'none'
               }}
             />
           </div>
           
           <button 
             type="submit"
-            disabled={!isValidAccountNumber(accountNumber) || !isValidIFSC(ifscCode)}
+            disabled={!accountNumber || !ifscCode}
             style={{
-              background: (isValidAccountNumber(accountNumber) && isValidIFSC(ifscCode)) ? '#00fb57' : '#374151',
-              color: (isValidAccountNumber(accountNumber) && isValidIFSC(ifscCode)) ? '#1a1a1a' : '#6b7280',
+              background: (accountNumber && ifscCode) ? '#00fb57' : '#374151',
+              color: (accountNumber && ifscCode) ? '#1a1a1a' : '#6b7280',
               border: 'none',
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
               borderRadius: '8px',
-              cursor: (isValidAccountNumber(accountNumber) && isValidIFSC(ifscCode)) ? 'pointer' : 'not-allowed',
+              cursor: (accountNumber && ifscCode) ? 'pointer' : 'not-allowed',
               width: '100%',
               transition: 'all 0.3s ease'
             }}
           >
-            Next
+            Proceed →
           </button>
         </form>
       </div>
@@ -2148,7 +2016,6 @@ const ProfessionalBackground: React.FC<PageProps> = ({ showNotification }) => {
     capital_commitment: ''
   });
   const [userId, setUserId] = useState('');
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const storedUserId = localStorage.getItem('userId');
@@ -2156,22 +2023,6 @@ const ProfessionalBackground: React.FC<PageProps> = ({ showNotification }) => {
       setUserId(storedUserId);
     }
   }, []);
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      // Don't close if clicking on dropdown button or option
-      if (openDropdown && !target.closest('[data-dropdown]')) {
-        setOpenDropdown(null);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [openDropdown]);
 
   const options = {
     occupation: [
@@ -2242,184 +2093,78 @@ const ProfessionalBackground: React.FC<PageProps> = ({ showNotification }) => {
     window.location.reload();
   };
 
-  const renderDropdown = (name: keyof typeof options, label: string) => {
-    const isOpen = openDropdown === name;
-    const selectedOption = options[name].find(opt => opt.value === formData[name]);
-    
-    const handleOptionSelect = (value: string) => {
-      setFormData({...formData, [name]: value});
-      setOpenDropdown(null);
-    };
-
-    const handleKeyDown = (event: React.KeyboardEvent) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        setOpenDropdown(isOpen ? null : name);
-      } else if (event.key === 'Escape') {
-        setOpenDropdown(null);
-      }
-    };
-    
-    return (
-      <div style={{ marginBottom: '1.5rem', position: 'relative' }} data-dropdown>
-        <label style={{
-          color: '#bbb',
-          marginBottom: '8px',
-          fontSize: '14px',
-          display: 'block'
-        }}>
-          {label}
-        </label>
-        <div style={{ position: 'relative' }} data-dropdown>
-          {/* Custom Dropdown Button */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              setOpenDropdown(isOpen ? null : name);
-            }}
-            onKeyDown={handleKeyDown}
-            tabIndex={0}
-            style={{
-              width: '100%',
-              padding: '1rem',
-              paddingRight: '3rem',
-              fontSize: '1rem',
-              borderRadius: '8px',
-              border: '1px solid #374151',
-              background: '#374151',
-              color: selectedOption ? 'white' : '#9ca3af',
-              outline: 'none',
-              cursor: 'pointer',
-              textAlign: 'left',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between'
-            }}
-          >
-            <span>{selectedOption ? selectedOption.label : `Select ${label}`}</span>
-            <span style={{
-              color: '#9ca3af',
-              fontSize: '1rem',
-              transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-              transition: 'transform 0.2s ease'
-            }}>
-              ▼
-            </span>
-          </button>
-          
-          {/* Custom Dropdown Options */}
-          {isOpen && (
-            <div 
-              style={{
-                position: 'absolute',
-                top: '100%',
-                left: 0,
-                right: 0,
-                zIndex: 1000,
-                background: '#374151',
-                border: '1px solid #4b5563',
-                borderRadius: '8px',
-                marginTop: '4px',
-                maxHeight: '200px',
-                overflowY: 'auto',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.3)'
-              }}
-              data-dropdown
-            >
-              {options[name].map((option, index) => (
-                <button
-                  key={option.value}
-                  type="button"
-                  tabIndex={0}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleOptionSelect(option.value);
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      handleOptionSelect(option.value);
-                    }
-                  }}
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem 1rem',
-                    fontSize: '1rem',
-                    background: formData[name] === option.value ? '#4b5563' : 'transparent',
-                    color: 'white',
-                    border: 'none',
-                    textAlign: 'left',
-                    cursor: 'pointer',
-                    transition: 'background 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    if (formData[name] !== option.value) {
-                      (e.target as HTMLElement).style.background = '#4b5563';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (formData[name] !== option.value) {
-                      (e.target as HTMLElement).style.background = 'transparent';
-                    }
-                  }}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  };
+  const renderDropdown = (name: keyof typeof options, label: string) => (
+    <div style={{ marginBottom: '24px' }}>
+      <label style={{
+        color: '#bbb',
+        marginBottom: '6px',
+        fontSize: '14px',
+        display: 'block'
+      }}>
+        {label}
+      </label>
+      <select
+        value={formData[name]}
+        onChange={(e) => setFormData({...formData, [name]: e.target.value})}
+        style={{
+          width: '100%',
+          padding: '12px',
+          fontSize: '1rem',
+          borderRadius: '8px',
+          border: '1px solid #444',
+          background: '#111',
+          color: 'white',
+          outline: 'none'
+        }}
+      >
+        <option value="" style={{ background: '#111', color: '#888' }}>Select</option>
+        {options[name].map((option) => (
+          <option key={option.value} value={option.value} style={{ background: '#111', color: 'white' }}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
 
         <h1 style={{
           color: '#fff',
-          fontSize: '2.5rem',
+          fontSize: '2rem',
           fontWeight: 'bold',
-          marginBottom: '10px'
+          marginBottom: '8px'
         }}>
           Professional Background
         </h1>
@@ -2441,21 +2186,20 @@ const ProfessionalBackground: React.FC<PageProps> = ({ showNotification }) => {
           
           <button 
             type="submit"
-            disabled={!formData.occupation || !formData.income_source || !formData.annual_income || !formData.capital_commitment}
             style={{
-              background: (formData.occupation && formData.income_source && formData.annual_income && formData.capital_commitment) ? '#00fb57' : '#374151',
-              color: (formData.occupation && formData.income_source && formData.annual_income && formData.capital_commitment) ? '#1a1a1a' : '#6b7280',
+              background: '#00fb57',
+              color: '#1a1a1a',
               border: 'none',
-              padding: '1rem 2rem',
+              padding: '14px 2rem',
               fontSize: '1rem',
               fontWeight: '600',
               borderRadius: '8px',
-              cursor: (formData.occupation && formData.income_source && formData.annual_income && formData.capital_commitment) ? 'pointer' : 'not-allowed',
+              cursor: 'pointer',
               width: '100%',
               transition: 'all 0.3s ease'
             }}
           >
-            Next
+            Continue →
           </button>
         </form>
       </div>
@@ -2478,10 +2222,6 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
     resident: '',
     date_of_birth: '',
     tax_identity_number: '' // Add this field for backend compatibility
-  });
-  const [originalProfile, setOriginalProfile] = useState({
-    address: '',
-    father_name: ''
   });
   const [userId, setUserId] = useState('');
 
@@ -2522,7 +2262,7 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
               }
             };
 
-            const profileData = {
+            setUserProfile({
               full_name: data.data.full_name || '',
               email: data.data.email || '',
               phone_number: data.data.phone_number || '',
@@ -2534,13 +2274,6 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
               resident: data.data.resident || '',
               date_of_birth: formatDateForDisplay(data.data.date_of_birth || ''),
               tax_identity_number: data.data.tax_identity_number || data.data.pan_number || '' // Use PAN as tax identity
-            };
-            
-            setUserProfile(profileData);
-            // Store original editable values for comparison
-            setOriginalProfile({
-              address: profileData.address,
-              father_name: profileData.father_name
             });
           }
         } catch (error) {
@@ -2610,12 +2343,6 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
     }));
   };
 
-  // Check if user made changes to editable fields
-  const hasChanges = () => {
-    return userProfile.address !== originalProfile.address || 
-           userProfile.father_name !== originalProfile.father_name;
-  };
-
   if (loading) {
     return (
       <div style={{
@@ -2660,50 +2387,44 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
+        backdropFilter: 'blur(10px)',
+        maxHeight: '90vh',
         overflowY: 'auto'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
 
         <h1 style={{
           color: '#fff',
-          fontSize: '2.5rem',
+          fontSize: '2rem',
           fontWeight: 'bold',
-          marginBottom: '10px'
+          marginBottom: '8px'
         }}>
           User Details
         </h1>
@@ -2777,7 +2498,7 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
               background: '#00fb57',
               color: '#1a1a1a',
               border: 'none',
-              padding: '1rem 2rem',
+              padding: '14px 2rem',
               fontSize: '1rem',
               fontWeight: '600',
               borderRadius: '8px',
@@ -2787,7 +2508,7 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
               transition: 'all 0.3s ease'
             }}
           >
-            {hasChanges() ? 'Update Details' : 'Next'}
+            Update Details
           </button>
         </form>
       </div>
@@ -2846,44 +2567,38 @@ const ContributionAgreement: React.FC<PageProps> = ({ showNotification }) => {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
+        backdropFilter: 'blur(10px)',
+        maxHeight: '90vh',
         overflowY: 'auto'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
 
         <h1 style={{
           color: '#fff',
@@ -2891,7 +2606,7 @@ const ContributionAgreement: React.FC<PageProps> = ({ showNotification }) => {
           fontWeight: '500',
           marginBottom: '16px'
         }}>
-          Contribution Agreement
+          Contribution agreement
         </h1>
         
         <div style={{ marginBottom: '2rem', lineHeight: '1.6' }}>
@@ -2899,13 +2614,13 @@ const ContributionAgreement: React.FC<PageProps> = ({ showNotification }) => {
             I am an individual investor who has net tangible assets of at least two crore rupees excluding value of my principal residence, and:
           </p>
           <p style={{ color: '#ccc', fontSize: '15px', marginBottom: '12px' }}>
-            1. Have early-stage investment experience, or
+            1. have early-stage investment experience, or
           </p>
           <p style={{ color: '#ccc', fontSize: '15px', marginBottom: '12px' }}>
-            2. Have experience as a serial entrepreneur, or
+            2. have experience as a serial entrepreneur, or
           </p>
           <p style={{ color: '#ccc', fontSize: '15px', marginBottom: '12px' }}>
-            3. Am a senior management professional(s) with at least ten years of experience.
+            3. am a senior management professional(s) with at least ten years of experience.
           </p>
           <p style={{ color: '#ccc', fontSize: '15px', marginBottom: '12px' }}>
             For the purpose of this clause, 'early-stage investment experience' shall mean prior experience in investing in start-up or emerging or early-stage ventures and 'serial entrepreneur' shall mean a person who has promoted or co-promoted more than one start-up venture.
@@ -2915,24 +2630,21 @@ const ContributionAgreement: React.FC<PageProps> = ({ showNotification }) => {
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '12px',
+          gap: '8px',
           marginBottom: '2rem',
           cursor: 'pointer'
         }} onClick={() => setChecked(!checked)}>
           <div style={{
-            width: '20px',
-            height: '20px',
-            minWidth: '20px',
-            minHeight: '20px',
-            border: `2px solid ${checked ? '#00fb57' : '#9ca3af'}`,
-            background: checked ? '#00fb57' : 'transparent',
+            width: '25px',
+            height: '25px',
+            border: `2px solid ${checked ? '#546881' : '#B2BBC6'}`,
+            background: checked ? '#546881' : 'transparent',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            borderRadius: '50%',
-            flexShrink: 0
+            borderRadius: '4px'
           }}>
-            {checked && <span style={{ color: 'white', fontSize: '12px' }}>✓</span>}
+            {checked && <span style={{ color: 'white', fontSize: '16px' }}>✓</span>}
           </div>
           <label style={{
             color: '#ffffff',
@@ -2940,7 +2652,7 @@ const ContributionAgreement: React.FC<PageProps> = ({ showNotification }) => {
             lineHeight: '20px',
             cursor: 'pointer'
           }}>
-            I confirm that I qualify as an Angel Investor based on the above condition(s)
+            I confirm that I qualify as an Angel Investor based on the below condition(s)
             <span style={{ fontSize: '12px' }}>*</span>
           </label>
         </div>
@@ -2949,11 +2661,11 @@ const ContributionAgreement: React.FC<PageProps> = ({ showNotification }) => {
           onClick={handleContinue}
           disabled={!checked}
           style={{
-            background: checked ? '#00fb57' : '#374151',
-            color: checked ? '#1a1a1a' : '#6b7280',
+            background: checked ? '#00fb57' : '#666',
+            color: checked ? '#1a1a1a' : '#999',
             border: 'none',
-            padding: '1rem 2rem',
-            fontSize: '1rem',
+            padding: '14px 2rem',
+            fontSize: '16px',
             fontWeight: '600',
             borderRadius: '8px',
             cursor: checked ? 'pointer' : 'not-allowed',
@@ -2961,7 +2673,7 @@ const ContributionAgreement: React.FC<PageProps> = ({ showNotification }) => {
             transition: 'all 0.3s ease'
           }}
         >
-          Agree and Continue
+          Agree and continue →
         </button>
       </div>
     </div>
@@ -3026,44 +2738,36 @@ const UploadPhoto: React.FC<PageProps> = ({ showNotification }) => {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto'
+        backdropFilter: 'blur(10px)'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '1rem'
+          }}
+        >
+          ← Back
+        </button>
 
         <h1 style={{
           color: '#fff',
@@ -3102,13 +2806,7 @@ const UploadPhoto: React.FC<PageProps> = ({ showNotification }) => {
         </div>
 
         {selectedImage && (
-          <div style={{ 
-            marginBottom: '1.5rem', 
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
+          <div style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
             <img 
               src={URL.createObjectURL(selectedImage)}
               alt="Selected"
@@ -3116,16 +2814,10 @@ const UploadPhoto: React.FC<PageProps> = ({ showNotification }) => {
                 maxWidth: '200px',
                 maxHeight: '200px',
                 borderRadius: '8px',
-                border: '1px solid #374151',
-                display: 'block'
+                border: '1px solid #374151'
               }}
             />
-            <p style={{ 
-              color: '#9ca3af', 
-              fontSize: '14px', 
-              marginTop: '0.5rem',
-              textAlign: 'center'
-            }}>
+            <p style={{ color: '#9ca3af', fontSize: '14px', marginTop: '0.5rem' }}>
               {selectedImage.name}
             </p>
           </div>
@@ -3172,46 +2864,38 @@ const FinalApproval: React.FC<PageProps> = ({ showNotification }) => {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       display: 'flex',
-      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       color: 'white',
-      padding: '1rem',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
+      padding: '2rem'
     }}>
-      <button 
-        onClick={handleBack}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          color: '#9ca3af',
-          fontSize: '2rem',
-          cursor: 'pointer',
-          padding: '1rem',
-          alignSelf: 'flex-start',
-          zIndex: 10
-        }}
-      >
-        ←
-      </button>
-      
       <div style={{ 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        width: '100%', 
+        maxWidth: '400px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '12px',
         padding: '2rem',
-        maxHeight: '100%',
-        overflowY: 'auto',
+        backdropFilter: 'blur(10px)',
         textAlign: 'center'
       }}>
+        <button 
+          onClick={handleBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            marginBottom: '2rem',
+            alignSelf: 'flex-start'
+          }}
+        >
+          ← Back
+        </button>
 
         <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🎉</div>
         
@@ -3254,420 +2938,11 @@ const FinalApproval: React.FC<PageProps> = ({ showNotification }) => {
             borderRadius: '8px',
             cursor: 'pointer',
             width: '100%',
-            maxWidth: '300px',
             transition: 'all 0.3s ease'
           }}
         >
           Go to Dashboard
         </button>
-      </div>
-    </div>
-  );
-};
-
-// ProfileTab Component
-interface ProfileTabProps {
-  showNotification: (message: string, type?: 'success' | 'error' | 'info') => void;
-  activeTab: string;
-  handleTabChange: (tabLabel: string) => void;
-}
-
-interface UserProfile {
-  full_name: string;
-  email: string;
-  phone_number: string;
-  capital_commitment: number;
-  profilePicture?: string;
-}
-
-const ProfileTab: React.FC<ProfileTabProps> = ({ showNotification, activeTab, handleTabChange }) => {
-  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchUserProfile = async () => {
-      try {
-        setLoading(true);
-        const storedUserId = localStorage.getItem('userId');
-        if (!storedUserId) {
-          showNotification('User ID not found. Please login again.', 'error');
-          setLoading(false);
-          return;
-        }
-
-        console.log('Fetching user profile for ID:', storedUserId);
-        const apiUrl = `https://api.fundos.services/api/v0/test/user/details?user_id=${storedUserId}`;
-        console.log('API URL:', apiUrl);
-
-        const response = await fetch(apiUrl, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-        
-        console.log('Response status:', response.status);
-        console.log('Response headers:', response.headers);
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        console.log('API Response data:', data);
-        
-        // More flexible data validation
-        if (!data || !data.success) {
-          throw new Error('API request failed or returned error');
-        }
-        
-        const userData = data.data;
-        if (!userData) {
-          throw new Error('No user data received from API');
-        }
-        
-        setUserProfile({
-          full_name: userData.full_name || 'User Name',
-          email: userData.email || 'user@example.com',
-          phone_number: userData.phone_number || '+91 XXXXXXXXXX',
-          capital_commitment: userData.capital_commitment || 0,
-          profilePicture: userData.profilePicture || userData.profile_picture || undefined
-        });
-      } catch (error) {
-        console.error('Error fetching user profile:', error);
-        showNotification('Failed to load profile data. Please try again later.', 'error');
-        // Set a default state to prevent infinite retries
-        setUserProfile({
-          full_name: 'User',
-          email: 'N/A',
-          phone_number: 'N/A',
-          capital_commitment: 0,
-          profilePicture: undefined
-        });
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUserProfile();
-  }, []);
-
-  if (loading) {
-    return (
-      <div style={{
-        height: '100vh',
-        width: '100vw',
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: 'white'
-      }}>
-        <div style={{
-          textAlign: 'center'
-        }}>
-          <div style={{
-            width: '40px',
-            height: '40px',
-            border: '3px solid rgba(0, 251, 87, 0.3)',
-            borderTop: '3px solid #00fb57',
-            borderRadius: '50%',
-            animation: 'spin 1s linear infinite',
-            margin: '0 auto 1rem'
-          }}></div>
-          <p style={{ color: '#9ca3af', fontSize: '14px' }}>Loading profile...</p>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div style={{
-      height: '100vh',
-      width: '100vw',
-      background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
-      display: 'flex',
-      flexDirection: 'column',
-      color: 'white',
-      overflow: 'hidden',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      boxSizing: 'border-box'
-    }}>
-      
-      {/* Scrollable Content */}
-      <div style={{
-        flex: 1,
-        padding: '2rem',
-        overflow: 'auto',
-        paddingBottom: '6rem'
-      }}>
-        <h1 style={{
-          color: '#fff',
-          fontSize: '2rem',
-          fontWeight: 'bold',
-          margin: '0 0 2rem 0',
-          textAlign: 'center'
-        }}>
-          👤 Profile
-        </h1>
-
-        {/* Profile Card */}
-        <div style={{
-          background: 'rgba(255, 255, 255, 0.08)',
-          borderRadius: '16px',
-          padding: '2rem',
-          marginBottom: '1.5rem',
-          border: '1px solid rgba(255, 255, 255, 0.15)',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-          textAlign: 'center'
-        }}>
-          {/* Profile Picture */}
-          <div style={{
-            width: '100px',
-            height: '100px',
-            borderRadius: '50%',
-            background: userProfile?.profilePicture 
-              ? `url(${userProfile.profilePicture}) center/cover` 
-              : 'linear-gradient(135deg, #00fb57 0%, #00d647 100%)',
-            margin: '0 auto 1.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '2.5rem',
-            color: '#1a1a1a',
-            fontWeight: 'bold',
-            border: '3px solid rgba(0, 251, 87, 0.3)'
-          }}>
-                         {!userProfile?.profilePicture && userProfile?.full_name.charAt(0).toUpperCase()}
-           </div>
-
-           {/* User Name */}
-           <h2 style={{
-             color: '#fff',
-             fontSize: '1.5rem',
-             fontWeight: '600',
-             margin: '0 0 0.5rem 0'
-           }}>
-             {userProfile?.full_name}
-           </h2>
-
-          {/* KYC Status */}
-          <div style={{
-            background: 'rgba(0, 251, 87, 0.1)',
-            borderRadius: '20px',
-            padding: '6px 12px',
-            display: 'inline-block',
-            marginBottom: '1.5rem',
-            border: '1px solid rgba(0, 251, 87, 0.3)'
-          }}>
-            <span style={{
-              color: '#00fb57',
-              fontSize: '12px',
-              fontWeight: '600'
-            }}>
-              ✅ KYC Verified
-            </span>
-          </div>
-        </div>
-
-        {/* Contact Information */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1rem'
-        }}>
-          {/* Email */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            borderRadius: '12px',
-            padding: '1rem 1.5rem',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem'
-          }}>
-            <div style={{
-              width: '40px',
-              height: '40px',
-              background: 'rgba(59, 130, 246, 0.2)',
-              borderRadius: '10px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '1.2rem'
-            }}>
-              📧
-            </div>
-            <div style={{ flex: 1 }}>
-              <p style={{
-                color: '#9ca3af',
-                fontSize: '12px',
-                margin: '0 0 4px 0',
-                fontWeight: '600',
-                textTransform: 'uppercase'
-              }}>
-                Email Address
-              </p>
-              <p style={{
-                color: '#fff',
-                fontSize: '14px',
-                fontWeight: '500',
-                margin: '0'
-              }}>
-                {userProfile?.email}
-              </p>
-            </div>
-          </div>
-
-          {/* Phone */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            borderRadius: '12px',
-            padding: '1rem 1.5rem',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem'
-          }}>
-            <div style={{
-              width: '40px',
-              height: '40px',
-              background: 'rgba(34, 197, 94, 0.2)',
-              borderRadius: '10px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '1.2rem'
-            }}>
-              📱
-            </div>
-            <div style={{ flex: 1 }}>
-              <p style={{
-                color: '#9ca3af',
-                fontSize: '12px',
-                margin: '0 0 4px 0',
-                fontWeight: '600',
-                textTransform: 'uppercase'
-              }}>
-                Phone Number
-              </p>
-                             <p style={{
-                 color: '#fff',
-                 fontSize: '14px',
-                 fontWeight: '500',
-                 margin: '0'
-               }}>
-                 {userProfile?.phone_number}
-               </p>
-             </div>
-           </div>
-
-           {/* Capital Commitment */}
-           <div style={{
-             background: 'rgba(255, 255, 255, 0.05)',
-             borderRadius: '12px',
-             padding: '1rem 1.5rem',
-             border: '1px solid rgba(255, 255, 255, 0.1)',
-             display: 'flex',
-             alignItems: 'center',
-             gap: '1rem'
-           }}>
-             <div style={{
-               width: '40px',
-               height: '40px',
-               background: 'rgba(0, 251, 87, 0.2)',
-               borderRadius: '10px',
-               display: 'flex',
-               alignItems: 'center',
-               justifyContent: 'center',
-               fontSize: '1.2rem'
-             }}>
-               💰
-             </div>
-             <div style={{ flex: 1 }}>
-               <p style={{
-                 color: '#9ca3af',
-                 fontSize: '12px',
-                 margin: '0 0 4px 0',
-                 fontWeight: '600',
-                 textTransform: 'uppercase'
-               }}>
-                 Capital Commitment
-               </p>
-               <p style={{
-                 color: '#fff',
-                 fontSize: '14px',
-                 fontWeight: '500',
-                 margin: '0'
-               }}>
-                 ₹{((userProfile?.capital_commitment || 0) / 10000000).toFixed(2)}Cr
-               </p>
-             </div>
-           </div>
-        </div>
-      </div>
-
-      {/* Fixed Bottom Navigation */}
-      <div style={{
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        background: 'rgba(26, 26, 26, 0.95)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.2)',
-        padding: '1rem',
-        backdropFilter: 'blur(10px)',
-        zIndex: 1000
-      }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-around',
-          alignItems: 'center'
-        }}>
-          {[
-            { label: 'home', icon: '🏡', title: 'Home' },
-            { label: 'portfolio', icon: '📊', title: 'Portfolio' },
-            { label: 'updates', icon: '📢', title: 'Updates' },
-            { label: 'profile', icon: '👨‍💼', title: 'Profile' }
-          ].map((tab) => {
-            const isActive = activeTab === tab.label;
-            return (
-              <button
-                key={tab.label}
-                onClick={() => handleTabChange(tab.label)}
-                style={{
-                  background: isActive ? 'rgba(0, 251, 87, 0.2)' : 'transparent',
-                  border: isActive ? '1px solid rgba(0, 251, 87, 0.4)' : '1px solid transparent',
-                  borderRadius: '8px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  cursor: 'pointer',
-                  padding: '8px 12px',
-                  minWidth: '60px',
-                  transition: 'all 0.3s ease'
-                }}
-              >
-                <div style={{
-                  fontSize: '20px',
-                  marginBottom: '2px'
-                }}>
-                  {tab.icon}
-                </div>
-                <span style={{
-                  fontSize: '11px',
-                  color: isActive ? '#00fb57' : '#9ca3af',
-                  fontWeight: isActive ? '600' : '400'
-                }}>
-                  {tab.title}
-                </span>
-              </button>
-            );
-          })}
-        </div>
       </div>
     </div>
   );
@@ -3716,7 +2991,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
         console.log('Response status:', response.status);
         
         if (!response.ok) {
-          throw new Error(`http error! status: ${response.status}`);
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
         
         const data = await response.json();
@@ -3826,25 +3101,33 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
       case 'home':
         return (
           <div style={{
-            height: '100vh',
-            width: '100vw',
+            minHeight: '100vh',
             background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
             display: 'flex',
-            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
             color: 'white',
-            overflow: 'hidden',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            boxSizing: 'border-box'
+            padding: '2rem'
           }}>
+            <div style={{ 
+              width: '100%', 
+              maxWidth: '400px',
+              height: '75vh', // Fixed height for all tabs
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '12px',
+              backdropFilter: 'blur(10px)',
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden'
+            }}>
               
               {/* Scrollable Content */}
               <div style={{
                 flex: 1,
                 padding: '2rem',
                 overflow: 'auto',
-                paddingBottom: '6rem'
+                paddingBottom: '1rem'
               }}>
               {/* Header */}
               <div style={{ 
@@ -3900,7 +3183,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
               </div>
 
               {/* Deals Section */}
-              <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+              <div>
                 <h3 style={{
                   color: '#fff',
                   fontSize: '1.2rem',
@@ -3911,38 +3194,39 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                 </h3>
                 
                 {deals.length > 0 ? (
-                  <div style={{ 
-                    flex: 1, 
-                    overflowY: 'auto',
-                    paddingBottom: '1rem'
-                  }}>
+                  <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
                     {deals.map((deal) => (
                       <div 
                         key={deal.deal_id}
                         style={{
-                          background: 'rgba(255, 255, 255, 0.08)',
-                          borderRadius: '12px',
-                          padding: '1.5rem',
+                          background: 'rgba(255, 255, 255, 0.1)',
+                          borderRadius: '8px',
+                          padding: '1rem',
                           marginBottom: '1rem',
-                          border: '1px solid rgba(255, 255, 255, 0.15)',
-                          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+                          border: '1px solid rgba(255, 255, 255, 0.2)'
                         }}
                       >
+                        <h4 style={{
+                          color: '#fff',
+                          fontSize: '1rem',
+                          fontWeight: '600',
+                          margin: '0 0 8px 0'
+                        }}>
+                          {deal.title}
+                        </h4>
+                        <p style={{
+                          color: '#9ca3af',
+                          fontSize: '12px',
+                          margin: '0 0 12px 0',
+                          lineHeight: '1.4'
+                        }}>
+                          {deal.description}
+                        </p>
                         <div style={{ 
                           display: 'flex', 
                           justifyContent: 'space-between',
-                          alignItems: 'flex-start',
-                          marginBottom: '12px'
+                          alignItems: 'center'
                         }}>
-                          <h4 style={{
-                            color: '#fff',
-                            fontSize: '1.1rem',
-                            fontWeight: '600',
-                            margin: '0',
-                            flex: 1
-                          }}>
-                            {deal.title}
-                          </h4>
                           <span style={{
                             background: deal.deal_status === 'open' ? '#00fb57' : 
                                        deal.deal_status === 'closed' ? '#fd8888' : '#ffb800',
@@ -3950,138 +3234,26 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                             fontSize: '10px',
                             fontWeight: '600',
                             padding: '4px 8px',
-                            borderRadius: '6px',
-                            marginLeft: '8px'
+                            borderRadius: '4px'
                           }}>
                             {deal.deal_status.toUpperCase()}
                           </span>
-                        </div>
-                        
-                        <p style={{
-                          color: '#9ca3af',
-                          fontSize: '12px',
-                          margin: '0 0 16px 0',
-                          lineHeight: '1.5'
-                        }}>
-                          {deal.description.length > 100 ? deal.description.substring(0, 100) + '...' : deal.description}
-                        </p>
-
-                        {/* Deal Info Grid */}
-                        <div style={{
-                          display: 'grid',
-                          gridTemplateColumns: '1fr 1fr',
-                          gap: '12px',
-                          marginBottom: '16px'
-                        }}>
-                          <div style={{
-                            background: 'rgba(0, 251, 87, 0.1)',
-                            borderRadius: '8px',
-                            padding: '10px',
-                            border: '1px solid rgba(0, 251, 87, 0.2)'
-                          }}>
-                            <p style={{
-                              color: '#00fb57',
-                              fontSize: '10px',
-                              margin: '0 0 4px 0',
+                          <button
+                            onClick={() => handleViewDeal(deal.deal_id)}
+                            style={{
+                              background: '#00fb57',
+                              color: '#1a1a1a',
+                              border: 'none',
+                              padding: '6px 12px',
+                              fontSize: '12px',
                               fontWeight: '600',
-                              textTransform: 'uppercase'
-                            }}>
-                              Round Size
-                            </p>
-                            <p style={{
-                              color: '#fff',
-                              fontSize: '13px',
-                              fontWeight: 'bold',
-                              margin: '0'
-                            }}>
-                              ₹{(deal.round_size / 10000000).toFixed(1)}Cr
-                            </p>
-                          </div>
-                          <div style={{
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            borderRadius: '8px',
-                            padding: '10px',
-                            border: '1px solid rgba(255, 255, 255, 0.1)'
-                          }}>
-                            <p style={{
-                              color: '#9ca3af',
-                              fontSize: '10px',
-                              margin: '0 0 4px 0',
-                              fontWeight: '600',
-                              textTransform: 'uppercase'
-                            }}>
-                              Min. Investment
-                            </p>
-                            <p style={{
-                              color: '#fff',
-                              fontSize: '13px',
-                              fontWeight: 'bold',
-                              margin: '0'
-                            }}>
-                              ₹{(deal.minimum_investment / 10000000).toFixed(2)}Cr
-                            </p>
-                          </div>
+                              borderRadius: '4px',
+                              cursor: 'pointer'
+                            }}
+                          >
+                            View Deal
+                          </button>
                         </div>
-
-                        {/* Funding Progress */}
-                        <div style={{ marginBottom: '16px' }}>
-                          <div style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            marginBottom: '6px'
-                          }}>
-                            <p style={{
-                              color: '#00fb57',
-                              fontSize: '11px',
-                              margin: '0',
-                              fontWeight: '600'
-                            }}>
-                              🎯 Funding Progress
-                            </p>
-                            <p style={{
-                              color: '#fff',
-                              fontSize: '11px',
-                              margin: '0',
-                              fontWeight: '600'
-                            }}>
-                              {Math.floor(Math.random() * 40 + 10)}%
-                            </p>
-                          </div>
-                          <div style={{
-                            height: '6px',
-                            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                            borderRadius: '3px',
-                            overflow: 'hidden',
-                            border: '1px solid rgba(255, 255, 255, 0.1)'
-                          }}>
-                            <div style={{
-                              height: '100%',
-                              background: 'linear-gradient(90deg, #00fb57 0%, #00d647 100%)',
-                              width: `${Math.floor(Math.random() * 40 + 10)}%`,
-                              borderRadius: '2px',
-                              transition: 'width 0.8s ease'
-                            }}></div>
-                          </div>
-                        </div>
-
-                        <button
-                          onClick={() => handleViewDeal(deal.deal_id)}
-                          style={{
-                            background: 'linear-gradient(135deg, #00fb57 0%, #00d647 100%)',
-                            color: '#1a1a1a',
-                            border: 'none',
-                            padding: '10px 16px',
-                            fontSize: '12px',
-                            fontWeight: '600',
-                            borderRadius: '8px',
-                            cursor: 'pointer',
-                            width: '100%',
-                            transition: 'all 0.3s ease'
-                          }}
-                        >
-                          📊 View Details
-                        </button>
                       </div>
                     ))}
                   </div>
@@ -4113,19 +3285,33 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                   </div>
                 )}
               </div>
+
+              {/* Status */}
+              <div style={{
+                marginTop: '2rem',
+                padding: '1rem',
+                background: 'rgba(0, 251, 87, 0.1)',
+                borderRadius: '8px',
+                border: '1px solid rgba(0, 251, 87, 0.3)',
+                textAlign: 'center'
+              }}>
+                <p style={{
+                  color: '#00fb57',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  margin: 0
+                }}>
+                  ✅ KYC Complete - Ready to Invest!
+                </p>
+              </div>
               </div>
 
-              {/* Fixed Bottom Navigation */}
+              {/* Fixed Bottom Navigation within Card */}
               <div style={{
-                position: 'fixed',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                background: 'rgba(26, 26, 26, 0.95)',
+                background: 'rgba(255, 255, 255, 0.1)',
                 borderTop: '1px solid rgba(255, 255, 255, 0.2)',
                 padding: '1rem',
-                backdropFilter: 'blur(10px)',
-                zIndex: 1000
+                borderRadius: '0 0 12px 12px'
               }}>
                 <div style={{
                   display: 'flex',
@@ -4133,10 +3319,10 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                   alignItems: 'center'
                 }}>
                   {[
-                    { label: 'home', icon: '🏡', title: 'Home' },
-                    { label: 'portfolio', icon: '📊', title: 'Portfolio' },
-                    { label: 'updates', icon: '📢', title: 'Updates' },
-                    { label: 'profile', icon: '👨‍💼', title: 'Profile' }
+                    { label: 'home', icon: '🏠', title: 'Home' },
+                    { label: 'portfolio', icon: '💼', title: 'Portfolio' },
+                    { label: 'updates', icon: '🔔', title: 'Updates' },
+                    { label: 'profile', icon: '👤', title: 'Profile' }
                   ].map((tab) => {
                     const isActive = activeTab === tab.label;
                     return (
@@ -4175,124 +3361,129 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                   })}
                 </div>
               </div>
+            </div>
           </div>
         );
       case 'portfolio':
         return (
           <div style={{
-            height: '100vh',
-            width: '100vw',
+            minHeight: '100vh',
             background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
             display: 'flex',
-            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
             color: 'white',
-            overflow: 'hidden',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            boxSizing: 'border-box'
+            padding: '2rem'
           }}>
-              
-            {/* Scrollable Content */}
-            <div style={{
-              flex: 1,
-              padding: '2rem',
-              overflow: 'auto',
-              paddingBottom: '6rem',
-              textAlign: 'center'
-            }}>
-              <h1 style={{
-                color: '#fff',
-                fontSize: '2rem',
-                fontWeight: 'bold',
-                margin: '0 0 2rem 0'
-              }}>
-                💼 Portfolio
-              </h1>
-              <div style={{
-                background: 'rgba(255, 255, 255, 0.05)',
-                borderRadius: '8px',
-                padding: '3rem 2rem',
-                border: '1px solid rgba(255, 255, 255, 0.1)'
-              }}>
-                <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>📊</div>
-                <h3 style={{
-                  color: '#00fb57',
-                  fontSize: '1.2rem',
-                  fontWeight: '600',
-                  margin: '0 0 1rem 0'
-                }}>
-                  Portfolio Management
-                </h3>
-                <p style={{ 
-                  color: '#9ca3af', 
-                  fontSize: '14px', 
-                  margin: 0,
-                  lineHeight: '1.6'
-                }}>
-                  Track your investments, view performance metrics, and manage your portfolio. Coming soon!
-                </p>
-              </div>
-            </div>
-
-            {/* Fixed Bottom Navigation */}
-            <div style={{
-              position: 'fixed',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              background: 'rgba(26, 26, 26, 0.95)',
-              borderTop: '1px solid rgba(255, 255, 255, 0.2)',
-              padding: '1rem',
+            <div style={{ 
+              width: '100%', 
+              maxWidth: '400px',
+              height: '75vh', // Fixed height for all tabs
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '12px',
               backdropFilter: 'blur(10px)',
-              zIndex: 1000
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden'
             }}>
+              
+              {/* Scrollable Content */}
               <div style={{
-                display: 'flex',
-                justifyContent: 'space-around',
-                alignItems: 'center'
+                flex: 1,
+                padding: '2rem',
+                overflow: 'auto',
+                paddingBottom: '1rem',
+                textAlign: 'center'
               }}>
-                {[
-                  { label: 'home', icon: '🏡', title: 'Home' },
-                  { label: 'portfolio', icon: '📊', title: 'Portfolio' },
-                  { label: 'updates', icon: '📢', title: 'Updates' },
-                  { label: 'profile', icon: '👨‍💼', title: 'Profile' }
-                ].map((tab) => {
-                  const isActive = activeTab === tab.label;
-                  return (
-                    <button
-                      key={tab.label}
-                      onClick={() => handleTabChange(tab.label)}
-                      style={{
-                        background: isActive ? 'rgba(0, 251, 87, 0.2)' : 'transparent',
-                        border: isActive ? '1px solid rgba(0, 251, 87, 0.4)' : '1px solid transparent',
-                        borderRadius: '8px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        cursor: 'pointer',
-                        padding: '8px 12px',
-                        minWidth: '60px',
-                        transition: 'all 0.3s ease'
-                      }}
-                    >
-                      <div style={{
-                        fontSize: '20px',
-                        marginBottom: '2px'
-                      }}>
-                        {tab.icon}
-                      </div>
-                      <span style={{
-                        fontSize: '11px',
-                        color: isActive ? '#00fb57' : '#9ca3af',
-                        fontWeight: isActive ? '600' : '400'
-                      }}>
-                        {tab.title}
-                      </span>
-                    </button>
-                  );
-                })}
+                <h1 style={{
+                  color: '#fff',
+                  fontSize: '2rem',
+                  fontWeight: 'bold',
+                  margin: '0 0 2rem 0'
+                }}>
+                  💼 Portfolio
+                </h1>
+                <div style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  borderRadius: '8px',
+                  padding: '3rem 2rem',
+                  border: '1px solid rgba(255, 255, 255, 0.1)'
+                }}>
+                  <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>📊</div>
+                  <h3 style={{
+                    color: '#00fb57',
+                    fontSize: '1.2rem',
+                    fontWeight: '600',
+                    margin: '0 0 1rem 0'
+                  }}>
+                    Portfolio Management
+                  </h3>
+                  <p style={{ 
+                    color: '#9ca3af', 
+                    fontSize: '14px', 
+                    margin: 0,
+                    lineHeight: '1.6'
+                  }}>
+                    Track your investments, view performance metrics, and manage your portfolio. Coming soon!
+                  </p>
+                </div>
+              </div>
+
+              {/* Fixed Bottom Navigation within Card */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+                padding: '1rem',
+                borderRadius: '0 0 12px 12px'
+              }}>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-around',
+                  alignItems: 'center'
+                }}>
+                  {[
+                    { label: 'home', icon: '🏠', title: 'Home' },
+                    { label: 'portfolio', icon: '💼', title: 'Portfolio' },
+                    { label: 'updates', icon: '🔔', title: 'Updates' },
+                    { label: 'profile', icon: '👤', title: 'Profile' }
+                  ].map((tab) => {
+                    const isActive = activeTab === tab.label;
+                    return (
+                      <button
+                        key={tab.label}
+                        onClick={() => handleTabChange(tab.label)}
+                        style={{
+                          background: isActive ? 'rgba(0, 251, 87, 0.2)' : 'transparent',
+                          border: isActive ? '1px solid rgba(0, 251, 87, 0.4)' : '1px solid transparent',
+                          borderRadius: '8px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          cursor: 'pointer',
+                          padding: '8px 12px',
+                          minWidth: '60px',
+                          transition: 'all 0.3s ease'
+                        }}
+                      >
+                        <div style={{
+                          fontSize: '20px',
+                          marginBottom: '2px'
+                        }}>
+                          {tab.icon}
+                        </div>
+                        <span style={{
+                          fontSize: '11px',
+                          color: isActive ? '#00fb57' : '#9ca3af',
+                          fontWeight: isActive ? '600' : '400'
+                        }}>
+                          {tab.title}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
@@ -4300,25 +3491,33 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
       case 'updates':
         return (
           <div style={{
-            height: '100vh',
-            width: '100vw',
+            minHeight: '100vh',
             background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
             display: 'flex',
-            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
             color: 'white',
-            overflow: 'hidden',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            boxSizing: 'border-box'
+            padding: '2rem'
           }}>
+            <div style={{ 
+              width: '100%', 
+              maxWidth: '400px',
+              height: '75vh', // Fixed height for all tabs
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '12px',
+              backdropFilter: 'blur(10px)',
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden'
+            }}>
               
               {/* Scrollable Content */}
               <div style={{
                 flex: 1,
                 padding: '2rem',
                 overflow: 'auto',
-                paddingBottom: '6rem',
+                paddingBottom: '1rem',
                 textAlign: 'center'
               }}>
                 <h1 style={{
@@ -4350,22 +3549,17 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                     margin: 0,
                     lineHeight: '1.6'
                   }}>
-                                      Stay informed with the latest deal updates, notifications, and important announcements. Coming soon!
-                </p>
-              </div>
+                    Stay informed with the latest deal updates, notifications, and important announcements. Coming soon!
+                  </p>
+                </div>
               </div>
 
-              {/* Fixed Bottom Navigation */}
+              {/* Fixed Bottom Navigation within Card */}
               <div style={{
-                position: 'fixed',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                background: 'rgba(26, 26, 26, 0.95)',
+                background: 'rgba(255, 255, 255, 0.1)',
                 borderTop: '1px solid rgba(255, 255, 255, 0.2)',
                 padding: '1rem',
-                backdropFilter: 'blur(10px)',
-                zIndex: 1000
+                borderRadius: '0 0 12px 12px'
               }}>
                 <div style={{
                   display: 'flex',
@@ -4373,10 +3567,10 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                   alignItems: 'center'
                 }}>
                   {[
-                    { label: 'home', icon: '🏡', title: 'Home' },
-                    { label: 'portfolio', icon: '📊', title: 'Portfolio' },
-                    { label: 'updates', icon: '📢', title: 'Updates' },
-                    { label: 'profile', icon: '👨‍💼', title: 'Profile' }
+                    { label: 'home', icon: '🏠', title: 'Home' },
+                    { label: 'portfolio', icon: '💼', title: 'Portfolio' },
+                    { label: 'updates', icon: '🔔', title: 'Updates' },
+                    { label: 'profile', icon: '👤', title: 'Profile' }
                   ].map((tab) => {
                     const isActive = activeTab === tab.label;
                     return (
@@ -4415,10 +3609,133 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                   })}
                 </div>
               </div>
+            </div>
           </div>
         );
       case 'profile':
-        return <ProfileTab showNotification={showNotification} activeTab={activeTab} handleTabChange={handleTabChange} />;
+        return (
+          <div style={{
+            minHeight: '100vh',
+            background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+            padding: '2rem'
+          }}>
+            <div style={{ 
+              width: '100%', 
+              maxWidth: '400px',
+              height: '75vh', // Fixed height for all tabs
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '12px',
+              backdropFilter: 'blur(10px)',
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden'
+            }}>
+              
+              {/* Scrollable Content */}
+              <div style={{
+                flex: 1,
+                padding: '2rem',
+                overflow: 'auto',
+                paddingBottom: '1rem',
+                textAlign: 'center'
+              }}>
+                <h1 style={{
+                  color: '#fff',
+                  fontSize: '2rem',
+                  fontWeight: 'bold',
+                  margin: '0 0 2rem 0'
+                }}>
+                  👤 Profile
+                </h1>
+                <div style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  borderRadius: '8px',
+                  padding: '3rem 2rem',
+                  border: '1px solid rgba(255, 255, 255, 0.1)'
+                }}>
+                  <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>⚙️</div>
+                  <h3 style={{
+                    color: '#00fb57',
+                    fontSize: '1.2rem',
+                    fontWeight: '600',
+                    margin: '0 0 1rem 0'
+                  }}>
+                    Profile Settings
+                  </h3>
+                  <p style={{ 
+                    color: '#9ca3af', 
+                    fontSize: '14px', 
+                    margin: 0,
+                    lineHeight: '1.6'
+                  }}>
+                    Manage your account settings, personal information, and preferences. Coming soon!
+                  </p>
+                </div>
+              </div>
+
+              {/* Fixed Bottom Navigation within Card */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+                padding: '1rem',
+                borderRadius: '0 0 12px 12px'
+              }}>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-around',
+                  alignItems: 'center'
+                }}>
+                  {[
+                    { label: 'home', icon: '🏠', title: 'Home' },
+                    { label: 'portfolio', icon: '💼', title: 'Portfolio' },
+                    { label: 'updates', icon: '🔔', title: 'Updates' },
+                    { label: 'profile', icon: '👤', title: 'Profile' }
+                  ].map((tab) => {
+                    const isActive = activeTab === tab.label;
+                    return (
+                      <button
+                        key={tab.label}
+                        onClick={() => handleTabChange(tab.label)}
+                        style={{
+                          background: isActive ? 'rgba(0, 251, 87, 0.2)' : 'transparent',
+                          border: isActive ? '1px solid rgba(0, 251, 87, 0.4)' : '1px solid transparent',
+                          borderRadius: '8px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          cursor: 'pointer',
+                          padding: '8px 12px',
+                          minWidth: '60px',
+                          transition: 'all 0.3s ease'
+                        }}
+                      >
+                        <div style={{
+                          fontSize: '20px',
+                          marginBottom: '2px'
+                        }}>
+                          {tab.icon}
+                        </div>
+                        <span style={{
+                          fontSize: '11px',
+                          color: isActive ? '#00fb57' : '#9ca3af',
+                          fontWeight: isActive ? '600' : '400'
+                        }}>
+                          {tab.title}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
       default:
         return null;
     }

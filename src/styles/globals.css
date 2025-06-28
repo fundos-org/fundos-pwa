@@ -1,8 +1,3 @@
-/* Tailwind CSS imports */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* FundOS PWA Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito:wght@200..1000&family=Poppins:wght@100..900&display=swap');
 
@@ -19,12 +14,10 @@ body {
   background-color: #f9fafb;
   color: #111827;
   line-height: 1.5;
-  overflow-x: hidden;
 }
 
 html, body, #root {
   height: 100%;
-  width: 100%;
 }
 
 /* Loading Animation */
@@ -41,35 +34,4 @@ html, body, #root {
   --error: #fd8888;
   --gray-400: #9ca3af;
   --gray-700: #374151;
-}
-
-/* Responsive utilities */
-@layer utilities {
-  .safe-area-padding {
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-  }
-  
-  .touch-target {
-    min-height: 44px;
-    min-width: 44px;
-  }
-}
-
-/* Mobile-first responsive breakpoints */
-@media (max-width: 640px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
-}
-
-@media (min-width: 769px) {
-  html {
-    font-size: 16px;
-  }
 }
