@@ -36,7 +36,7 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
     const fetchDealDetails = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://43.205.36.168/api/v1/live/deals/?deal_id=${dealId}`);
+        const response = await fetch(`https://api.fundos.services/api/v1/live/deals/?deal_id=${dealId}`);
         
         if (!response.ok) {
           throw new Error('Failed to fetch deal details');
