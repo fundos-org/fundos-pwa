@@ -163,7 +163,7 @@ const ChooseInvestor: React.FC = () => {
                 padding: '20px',
                 marginBottom: '15px',
                 border: selectedValue === option.value ? '2px solid #00ffcc' : '1px solid #333',
-                borderRadius: '8px',
+                
                 cursor: 'pointer',
                 backgroundColor: selectedValue === option.value ? 'rgba(0, 255, 204, 0.1)' : 'transparent'
               }}
@@ -222,7 +222,7 @@ const ChooseInvestor: React.FC = () => {
             padding: '15px 30px',
             fontSize: '16px',
             fontWeight: '500',
-            borderRadius: '4px',
+            
             cursor: 'pointer',
             width: '100%'
           }}
@@ -248,7 +248,7 @@ const ChooseInvestor: React.FC = () => {
           <div style={{
             backgroundColor: '#242325',
             padding: '20px',
-            borderRadius: '10px',
+            
             width: '100%',
             maxWidth: '600px',
             position: 'relative'
@@ -349,7 +349,7 @@ const ChooseInvestor: React.FC = () => {
                 padding: '13px 20px',
                 fontSize: '16px',
                 fontWeight: '500',
-                borderRadius: '4px',
+                
                 cursor: isChecked ? 'pointer' : 'not-allowed',
                 width: '100%',
                 display: 'flex',

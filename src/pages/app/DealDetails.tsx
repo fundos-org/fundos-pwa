@@ -141,7 +141,7 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
           maxWidth: '400px',
           background: 'rgba(255, 255, 255, 0.05)',
           border: '1px solid rgba(255, 255, 255, 0.1)',
-          borderRadius: '12px',
+          
           padding: '2rem',
           backdropFilter: 'blur(10px)',
           textAlign: 'center'
@@ -191,7 +191,7 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
           maxWidth: '400px',
           background: 'rgba(255, 255, 255, 0.05)',
           border: '1px solid rgba(255, 255, 255, 0.1)',
-          borderRadius: '12px',
+          
           padding: '2rem',
           backdropFilter: 'blur(10px)',
           textAlign: 'center'
@@ -213,7 +213,7 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
               padding: '12px 24px',
               fontSize: '14px',
               fontWeight: '600',
-              borderRadius: '6px',
+              
               cursor: 'pointer'
             }}
           >
@@ -321,7 +321,7 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
             marginBottom: '1.5rem',
             padding: '1rem',
             background: 'rgba(0, 251, 87, 0.1)',
-            borderRadius: '6px',
+            
             border: '1px solid rgba(0, 251, 87, 0.3)'
           }}>
             <p style={{
@@ -495,7 +495,7 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
             <div style={{
               height: '8px',
               backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              borderRadius: '4px',
+              
               overflow: 'hidden',
               border: '1px solid rgba(255, 255, 255, 0.2)'
             }}>
@@ -524,7 +524,7 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
               fontWeight: 'bold',
               padding: '14px',
               border: 'none',
-              borderRadius: '8px',
+              
               cursor: 'pointer',
               width: '100%',
               transition: 'all 0.3s ease'
@@ -541,7 +541,7 @@ const DealDetails: React.FC<DealDetailsProps> = ({ dealId, showNotification, onB
               fontWeight: '600',
               padding: '12px',
               border: '1px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '8px',
+              
               cursor: 'pointer',
               width: '100%',
               transition: 'all 0.3s ease'

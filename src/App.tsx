@@ -63,7 +63,7 @@ const GetStarted = () => {
           padding: '15px 30px',
           fontSize: '18px',
           fontWeight: '500',
-          borderRadius: '4px',
+          
           cursor: 'pointer',
           width: '100%',
           maxWidth: '400px',
@@ -203,7 +203,7 @@ const PhoneNumber: React.FC<PageProps> = ({ showNotification }) => {
               display: 'flex',
               alignItems: 'center',
               border: '1px solid #374151',
-              borderRadius: '8px',
+              
               background: '#374151',
               overflow: 'hidden'
             }}>
@@ -252,7 +252,7 @@ const PhoneNumber: React.FC<PageProps> = ({ showNotification }) => {
                 width: '100%',
                 padding: '1rem',
                 fontSize: '1rem',
-                borderRadius: '8px',
+                
                 border: '1px solid #374151',
                 background: '#374151',
                 color: 'white'
@@ -270,7 +270,7 @@ const PhoneNumber: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: phoneNumber.length === 10 ? 'pointer' : 'not-allowed',
               width: '100%',
               transition: 'all 0.3s ease'
@@ -461,7 +461,7 @@ const VerifyPhoneOTP: React.FC<PageProps> = ({ showNotification }) => {
                     height: '3rem',
                     textAlign: 'center',
                     fontSize: '1.2rem',
-                    borderRadius: '8px',
+                    
                     border: '1px solid #374151',
                     background: '#374151',
                     color: 'white',
@@ -482,7 +482,7 @@ const VerifyPhoneOTP: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: otp.join('').length === 4 ? 'pointer' : 'not-allowed',
               width: '100%',
               transition: 'all 0.3s ease'
@@ -617,7 +617,7 @@ const EmailEntry: React.FC<PageProps> = ({ showNotification }) => {
                 width: '100%',
                 padding: '1rem',
                 fontSize: '1rem',
-                borderRadius: '8px',
+                
                 border: '1px solid #374151',
                 background: '#374151',
                 color: 'white'
@@ -635,7 +635,7 @@ const EmailEntry: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: isValidEmail(email) ? 'pointer' : 'not-allowed',
               width: '100%',
               transition: 'all 0.3s ease'
@@ -804,7 +804,7 @@ const VerifyEmailOTP: React.FC<PageProps> = ({ showNotification }) => {
                     height: '3rem',
                     textAlign: 'center',
                     fontSize: '1.2rem',
-                    borderRadius: '8px',
+                    
                     border: '1px solid #374151',
                     background: '#374151',
                     color: 'white',
@@ -825,7 +825,7 @@ const VerifyEmailOTP: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: otp.join('').length === 6 ? 'pointer' : 'not-allowed',
               width: '100%',
               transition: 'all 0.3s ease',
@@ -1007,7 +1007,7 @@ const ChooseInvestor: React.FC<PageProps> = ({ showNotification }) => {
               onClick={() => setSelectedType(option.value)}
               style={{
                 border: `2px solid ${selectedType === option.value ? '#00fb57' : '#374151'}`,
-                borderRadius: '8px',
+                
                 padding: '1rem',
                 marginBottom: '1rem',
                 cursor: 'pointer',
@@ -1066,7 +1066,7 @@ const ChooseInvestor: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: 'pointer',
               width: '100%',
               transition: 'all 0.3s ease'
@@ -1187,7 +1187,7 @@ const ChooseInvestor: React.FC<PageProps> = ({ showNotification }) => {
                   padding: '1rem 2rem',
                   fontSize: '1rem',
                   fontWeight: '600',
-                  borderRadius: '8px',
+                  
                   cursor: isChecked ? 'pointer' : 'not-allowed',
                   width: '100%',
                   transition: 'all 0.3s ease',
@@ -1288,7 +1288,7 @@ const KYCStart: React.FC<PageProps> = ({ showNotification }) => {
             padding: '1rem 2rem',
             fontSize: '1rem',
             fontWeight: '600',
-            borderRadius: '8px',
+            
             cursor: 'pointer',
             width: '100%',
             transition: 'all 0.3s ease'
@@ -1436,7 +1436,7 @@ const AadhaarVerification: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: 'pointer',
               width: '100%',
               marginBottom: '10px',
@@ -1457,7 +1457,7 @@ const AadhaarVerification: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: 'pointer',
               width: '100%',
               marginBottom: '10px',
@@ -1478,7 +1478,7 @@ const AadhaarVerification: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: 'pointer',
               width: '100%',
               transition: 'all 0.3s ease'
@@ -1594,7 +1594,7 @@ const VerifyAadhaarOTP: React.FC<PageProps> = ({ showNotification }) => {
         maxWidth: '400px',
         background: 'rgba(255, 255, 255, 0.05)',
         border: '1px solid rgba(255, 255, 255, 0.1)',
-        borderRadius: '12px',
+        
         padding: '2rem',
         backdropFilter: 'blur(10px)'
       }}>
@@ -1653,7 +1653,7 @@ const VerifyAadhaarOTP: React.FC<PageProps> = ({ showNotification }) => {
                   textAlign: 'center',
                   fontSize: '1.5rem',
                   fontWeight: 'bold',
-                  borderRadius: '8px',
+                  
                   border: '2px solid #374151',
                   background: '#374151',
                   color: 'white',
@@ -1674,7 +1674,7 @@ const VerifyAadhaarOTP: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: (otp.join('').length === 6 && !loading) ? 'pointer' : 'not-allowed',
               width: '100%',
               transition: 'all 0.3s ease'
@@ -1857,7 +1857,7 @@ const PANVerification: React.FC<PageProps> = ({ showNotification }) => {
                 width: '100%',
                 padding: '1rem',
                 fontSize: '1rem',
-                borderRadius: '8px',
+                
                 border: '1px solid #374151',
                 background: '#374151',
                 color: 'white',
@@ -1878,7 +1878,7 @@ const PANVerification: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: isValidPAN(pan) ? 'pointer' : 'not-allowed',
               width: '100%',
               transition: 'all 0.3s ease'
@@ -2083,7 +2083,7 @@ const BankDetails: React.FC<PageProps> = ({ showNotification }) => {
                 width: '100%',
                 padding: '1rem',
                 fontSize: '1rem',
-                borderRadius: '8px',
+                
                 border: '1px solid #374151',
                 background: '#374151',
                 color: 'white',
@@ -2104,7 +2104,7 @@ const BankDetails: React.FC<PageProps> = ({ showNotification }) => {
                 width: '100%',
                 padding: '1rem',
                 fontSize: '1rem',
-                borderRadius: '8px',
+                
                 border: '1px solid #374151',
                 background: '#374151',
                 color: 'white',
@@ -2125,7 +2125,7 @@ const BankDetails: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: (isValidAccountNumber(accountNumber) && isValidIFSC(ifscCode)) ? 'pointer' : 'not-allowed',
               width: '100%',
               transition: 'all 0.3s ease'
@@ -2285,7 +2285,7 @@ const ProfessionalBackground: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem',
               paddingRight: '3rem',
               fontSize: '1rem',
-              borderRadius: '8px',
+              
               border: '1px solid #374151',
               background: '#374151',
               color: selectedOption ? 'white' : '#9ca3af',
@@ -2319,7 +2319,7 @@ const ProfessionalBackground: React.FC<PageProps> = ({ showNotification }) => {
                 zIndex: 1000,
                 background: '#374151',
                 border: '1px solid #4b5563',
-                borderRadius: '8px',
+                
                 marginTop: '4px',
                 maxHeight: '200px',
                 overflowY: 'auto',
@@ -2449,7 +2449,7 @@ const ProfessionalBackground: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: (formData.occupation && formData.income_source && formData.annual_income && formData.capital_commitment) ? 'pointer' : 'not-allowed',
               width: '100%',
               transition: 'all 0.3s ease'
@@ -2739,7 +2739,7 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
                     width: '100%',
                     padding: '0.75rem',
                     fontSize: '1rem',
-                    borderRadius: '8px',
+                    
                     border: field.editable ? '1px solid #374151' : '1px solid #4b5563',
                     background: field.editable ? '#374151' : '#4b5563',
                     color: field.editable ? 'white' : '#9ca3af',
@@ -2759,7 +2759,7 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
                     width: '100%',
                     padding: '0.75rem',
                     fontSize: '1rem',
-                    borderRadius: '8px',
+                    
                     border: field.editable ? '1px solid #374151' : '1px solid #4b5563',
                     background: field.editable ? '#374151' : '#4b5563',
                     color: field.editable ? 'white' : '#9ca3af',
@@ -2780,7 +2780,7 @@ const UserDetails: React.FC<PageProps> = ({ showNotification }) => {
               padding: '1rem 2rem',
               fontSize: '1rem',
               fontWeight: '600',
-              borderRadius: '8px',
+              
               cursor: 'pointer',
               width: '100%',
               marginTop: '1rem',
@@ -2955,7 +2955,7 @@ const ContributionAgreement: React.FC<PageProps> = ({ showNotification }) => {
             padding: '1rem 2rem',
             fontSize: '1rem',
             fontWeight: '600',
-            borderRadius: '8px',
+            
             cursor: checked ? 'pointer' : 'not-allowed',
             width: '100%',
             transition: 'all 0.3s ease'
@@ -3092,7 +3092,7 @@ const UploadPhoto: React.FC<PageProps> = ({ showNotification }) => {
               width: '100%',
               padding: '1rem',
               fontSize: '1rem',
-              borderRadius: '8px',
+              
               border: '1px solid #374151',
               background: '#374151',
               color: 'white',
@@ -3115,7 +3115,7 @@ const UploadPhoto: React.FC<PageProps> = ({ showNotification }) => {
               style={{
                 maxWidth: '200px',
                 maxHeight: '200px',
-                borderRadius: '8px',
+                
                 border: '1px solid #374151',
                 display: 'block'
               }}
@@ -3141,7 +3141,7 @@ const UploadPhoto: React.FC<PageProps> = ({ showNotification }) => {
             padding: '1rem 2rem',
             fontSize: '1rem',
             fontWeight: '600',
-            borderRadius: '8px',
+            
             cursor: (selectedImage && !uploading) ? 'pointer' : 'not-allowed',
             width: '100%',
             transition: 'all 0.3s ease'
@@ -3251,7 +3251,7 @@ const FinalApproval: React.FC<PageProps> = ({ showNotification }) => {
             padding: '1rem 2rem',
             fontSize: '1rem',
             fontWeight: '600',
-            borderRadius: '8px',
+            
             cursor: 'pointer',
             width: '100%',
             maxWidth: '300px',
@@ -3416,7 +3416,6 @@ const ProfileTab: React.FC<ProfileTabProps> = ({ showNotification, activeTab, ha
         {/* Profile Card */}
         <div style={{
           background: 'rgba(255, 255, 255, 0.08)',
-          borderRadius: '16px',
           padding: '2rem',
           marginBottom: '1.5rem',
           border: '1px solid rgba(255, 255, 255, 0.15)',
@@ -3481,7 +3480,7 @@ const ProfileTab: React.FC<ProfileTabProps> = ({ showNotification, activeTab, ha
           {/* Email */}
           <div style={{
             background: 'rgba(255, 255, 255, 0.05)',
-            borderRadius: '12px',
+            
             padding: '1rem 1.5rem',
             border: '1px solid rgba(255, 255, 255, 0.1)',
             display: 'flex',
@@ -3492,7 +3491,7 @@ const ProfileTab: React.FC<ProfileTabProps> = ({ showNotification, activeTab, ha
               width: '40px',
               height: '40px',
               background: 'rgba(59, 130, 246, 0.2)',
-              borderRadius: '10px',
+              
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -3524,7 +3523,7 @@ const ProfileTab: React.FC<ProfileTabProps> = ({ showNotification, activeTab, ha
           {/* Phone */}
           <div style={{
             background: 'rgba(255, 255, 255, 0.05)',
-            borderRadius: '12px',
+            
             padding: '1rem 1.5rem',
             border: '1px solid rgba(255, 255, 255, 0.1)',
             display: 'flex',
@@ -3535,7 +3534,7 @@ const ProfileTab: React.FC<ProfileTabProps> = ({ showNotification, activeTab, ha
               width: '40px',
               height: '40px',
               background: 'rgba(34, 197, 94, 0.2)',
-              borderRadius: '10px',
+              
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -3567,7 +3566,7 @@ const ProfileTab: React.FC<ProfileTabProps> = ({ showNotification, activeTab, ha
            {/* Capital Commitment */}
            <div style={{
              background: 'rgba(255, 255, 255, 0.05)',
-             borderRadius: '12px',
+             
              padding: '1rem 1.5rem',
              border: '1px solid rgba(255, 255, 255, 0.1)',
              display: 'flex',
@@ -3578,7 +3577,7 @@ const ProfileTab: React.FC<ProfileTabProps> = ({ showNotification, activeTab, ha
                width: '40px',
                height: '40px',
                background: 'rgba(0, 251, 87, 0.2)',
-               borderRadius: '10px',
+               
                display: 'flex',
                alignItems: 'center',
                justifyContent: 'center',
@@ -3640,7 +3639,7 @@ const ProfileTab: React.FC<ProfileTabProps> = ({ showNotification, activeTab, ha
                 style={{
                   background: isActive ? 'rgba(0, 251, 87, 0.2)' : 'transparent',
                   border: isActive ? '1px solid rgba(0, 251, 87, 0.4)' : '1px solid transparent',
-                  borderRadius: '8px',
+                  
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -3787,7 +3786,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
           maxWidth: '400px',
           background: 'rgba(255, 255, 255, 0.05)',
           border: '1px solid rgba(255, 255, 255, 0.1)',
-          borderRadius: '12px',
+          
           padding: '2rem',
           backdropFilter: 'blur(10px)',
           textAlign: 'center'
@@ -3871,7 +3870,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                     fontWeight: '600',
                     padding: '8px 12px',
                     border: 'none',
-                    borderRadius: '6px',
+                    
                     cursor: 'pointer'
                   }}
                 >
@@ -3921,7 +3920,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                         key={deal.deal_id}
                         style={{
                           background: 'rgba(255, 255, 255, 0.08)',
-                          borderRadius: '12px',
+                          
                           padding: '1.5rem',
                           marginBottom: '1rem',
                           border: '1px solid rgba(255, 255, 255, 0.15)',
@@ -3950,7 +3949,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                             fontSize: '10px',
                             fontWeight: '600',
                             padding: '4px 8px',
-                            borderRadius: '6px',
+                            
                             marginLeft: '8px'
                           }}>
                             {deal.deal_status.toUpperCase()}
@@ -3975,7 +3974,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                         }}>
                           <div style={{
                             background: 'rgba(0, 251, 87, 0.1)',
-                            borderRadius: '8px',
+                            
                             padding: '10px',
                             border: '1px solid rgba(0, 251, 87, 0.2)'
                           }}>
@@ -3999,7 +3998,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                           </div>
                           <div style={{
                             background: 'rgba(255, 255, 255, 0.05)',
-                            borderRadius: '8px',
+                            
                             padding: '10px',
                             border: '1px solid rgba(255, 255, 255, 0.1)'
                           }}>
@@ -4051,7 +4050,6 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                           <div style={{
                             height: '6px',
                             backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                            borderRadius: '3px',
                             overflow: 'hidden',
                             border: '1px solid rgba(255, 255, 255, 0.1)'
                           }}>
@@ -4059,7 +4057,6 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                               height: '100%',
                               background: 'linear-gradient(90deg, #00fb57 0%, #00d647 100%)',
                               width: `${Math.floor(Math.random() * 40 + 10)}%`,
-                              borderRadius: '2px',
                               transition: 'width 0.8s ease'
                             }}></div>
                           </div>
@@ -4074,7 +4071,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                             padding: '10px 16px',
                             fontSize: '12px',
                             fontWeight: '600',
-                            borderRadius: '8px',
+                            
                             cursor: 'pointer',
                             width: '100%',
                             transition: 'all 0.3s ease'
@@ -4088,7 +4085,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                 ) : (
                   <div style={{
                     background: 'rgba(255, 255, 255, 0.05)',
-                    borderRadius: '8px',
+                    
                     padding: '2rem',
                     textAlign: 'center',
                     border: '1px solid rgba(255, 255, 255, 0.1)'
@@ -4146,7 +4143,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                         style={{
                           background: isActive ? 'rgba(0, 251, 87, 0.2)' : 'transparent',
                           border: isActive ? '1px solid rgba(0, 251, 87, 0.4)' : '1px solid transparent',
-                          borderRadius: '8px',
+                          
                           display: 'flex',
                           flexDirection: 'column',
                           alignItems: 'center',
@@ -4211,7 +4208,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
               </h1>
               <div style={{
                 background: 'rgba(255, 255, 255, 0.05)',
-                borderRadius: '8px',
+                
                 padding: '3rem 2rem',
                 border: '1px solid rgba(255, 255, 255, 0.1)'
               }}>
@@ -4266,7 +4263,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                       style={{
                         background: isActive ? 'rgba(0, 251, 87, 0.2)' : 'transparent',
                         border: isActive ? '1px solid rgba(0, 251, 87, 0.4)' : '1px solid transparent',
-                        borderRadius: '8px',
+                        
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
@@ -4331,7 +4328,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                 </h1>
                 <div style={{
                   background: 'rgba(255, 255, 255, 0.05)',
-                  borderRadius: '8px',
+                  
                   padding: '3rem 2rem',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}>
@@ -4386,7 +4383,7 @@ const Dashboard: React.FC<PageProps> = ({ showNotification }) => {
                         style={{
                           background: isActive ? 'rgba(0, 251, 87, 0.2)' : 'transparent',
                           border: isActive ? '1px solid rgba(0, 251, 87, 0.4)' : '1px solid transparent',
-                          borderRadius: '8px',
+                          
                           display: 'flex',
                           flexDirection: 'column',
                           alignItems: 'center',
@@ -4556,7 +4553,7 @@ const App = () => {
             <div style={{
               background: 'rgba(255, 255, 255, 0.05)',
               border: '1px solid rgba(255, 255, 255, 0.1)',
-              borderRadius: '12px',
+              
               padding: '2rem',
               textAlign: 'center',
               maxWidth: '400px'
@@ -4578,7 +4575,7 @@ const App = () => {
                   padding: '12px 24px',
                   fontSize: '14px',
                   fontWeight: '600',
-                  borderRadius: '6px',
+                  
                   cursor: 'pointer'
                 }}
               >

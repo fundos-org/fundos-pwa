@@ -166,7 +166,7 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
             maxWidth: '400px',
             background: 'rgba(255, 255, 255, 0.05)',
             border: '1px solid rgba(255, 255, 255, 0.1)',
-            borderRadius: '12px',
+            
             padding: '2rem',
             backdropFilter: 'blur(10px)',
             textAlign: 'center'
@@ -246,7 +246,7 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
             maxWidth: '400px',
             background: 'rgba(255, 255, 255, 0.05)',
             border: '1px solid rgba(255, 255, 255, 0.1)',
-            borderRadius: '12px',
+            
             padding: '2rem',
             backdropFilter: 'blur(10px)',
             textAlign: 'center'
@@ -268,7 +268,7 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
                 padding: '12px 24px',
                 fontSize: '14px',
                 fontWeight: '600',
-                borderRadius: '6px',
+                
                 cursor: 'pointer'
               }}
             >
@@ -379,7 +379,7 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
                 fontSize: '18px',
                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
                 border: '1px solid rgba(255, 255, 255, 0.3)',
-                borderRadius: '8px',
+                
                 color: '#fff',
                 outline: 'none',
                 fontWeight: 'bold',
@@ -421,7 +421,7 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
               fontWeight: 'bold',
               padding: '14px',
               border: isInvestmentValid ? 'none' : '1px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '8px',
+              
               cursor: isInvestmentValid ? 'pointer' : 'not-allowed',
               width: '100%',
               transition: 'all 0.3s ease'
@@ -449,7 +449,7 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
         }}>
           <div style={{
             backgroundColor: 'rgba(26, 26, 26, 0.95)',
-            borderRadius: '12px',
+            
             padding: '2rem',
             width: '100%',
             maxWidth: '400px',
@@ -565,7 +565,7 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
                   fontWeight: '600',
                   padding: '12px',
                   border: '1px solid rgba(255, 255, 255, 0.3)',
-                  borderRadius: '8px',
+                  
                   cursor: 'pointer',
                   flex: 1
                 }}
@@ -582,7 +582,7 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
                   fontWeight: '600',
                   padding: '12px',
                   border: checked ? 'none' : '1px solid rgba(255, 255, 255, 0.3)',
-                  borderRadius: '8px',
+                  
                   cursor: checked ? 'pointer' : 'not-allowed',
                   flex: 1
                 }}

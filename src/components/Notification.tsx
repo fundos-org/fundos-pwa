@@ -30,7 +30,7 @@ const Notification: React.FC<NotificationProps> = ({
       minWidth: '300px',
       maxWidth: '90vw',
       padding: '16px 20px',
-      borderRadius: '8px',
+      
       color: 'white',
       fontSize: '14px',
       fontWeight: '500',

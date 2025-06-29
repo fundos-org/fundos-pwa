@@ -57,7 +57,7 @@ const TermSheet: React.FC<TermSheetProps> = ({ onBack }) => {
         <div style={{
           background: 'rgba(255, 255, 255, 0.05)',
           border: '1px solid rgba(255, 255, 255, 0.1)',
-          borderRadius: '12px',
+          
           padding: '2rem',
           backdropFilter: 'blur(10px)',
           marginBottom: '2rem'
@@ -147,7 +147,7 @@ const TermSheet: React.FC<TermSheetProps> = ({ onBack }) => {
           <div style={{
             background: 'rgba(0, 251, 87, 0.1)',
             border: '1px solid rgba(0, 251, 87, 0.3)',
-            borderRadius: '8px',
+            
             padding: '1rem',
             marginTop: '1.5rem'
           }}>
@@ -177,7 +177,7 @@ const TermSheet: React.FC<TermSheetProps> = ({ onBack }) => {
               fontWeight: '600',
               padding: '14px 24px',
               border: '1px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '8px',
+              
               cursor: 'pointer',
               flex: 1,
               transition: 'all 0.3s ease'
@@ -193,7 +193,7 @@ const TermSheet: React.FC<TermSheetProps> = ({ onBack }) => {
               fontWeight: '600',
               padding: '14px 24px',
               border: 'none',
-              borderRadius: '8px',
+              
               cursor: 'pointer',
               flex: 1,
               transition: 'all 0.3s ease'
