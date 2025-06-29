@@ -119,53 +119,83 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
   const gst = managementFee * 0.18;
   const total = parsedAmount + managementFee + gst;
 
-  const isInvestmentValid = parsedAmount > 0;
+  const isInvestmentValid = parsedAmount > 0 && parsedAmount >= (deal?.minimum_investment || 0);
 
   if (loading) {
     return (
       <div style={{
-        minHeight: '100vh',
+        height: '100vh',
+        width: '100vw',
         background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        flexDirection: 'column',
         color: 'white',
-        padding: '2rem'
+        overflow: 'hidden',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        boxSizing: 'border-box'
       }}>
-        <div style={{ 
-          width: '100%', 
-          maxWidth: '400px',
-          background: 'rgba(255, 255, 255, 0.05)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          borderRadius: '12px',
-          padding: '2rem',
-          backdropFilter: 'blur(10px)',
-          textAlign: 'center'
-        }}>
-          <div style={{
-            width: '60px',
-            height: '60px',
-            border: '4px solid #374151',
-            borderTop: '4px solid #00fb57',
-            borderRadius: '50%',
-            animation: 'spin 1s linear infinite',
-            margin: '0 auto 20px'
-          }}></div>
-          <h2 style={{
-            fontSize: '1.5rem',
-            fontWeight: '500',
-            color: '#FDFDFD',
-            margin: '0 0 10px 0'
-          }}>
-            Loading Deal Details
-          </h2>
-          <p style={{
-            fontSize: '14px',
+        {/* Back Icon */}
+        <button 
+          onClick={onBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
             color: '#9ca3af',
-            margin: 0
+            fontSize: '2rem',
+            cursor: 'pointer',
+            padding: '1rem',
+            alignSelf: 'flex-start',
+            zIndex: 10
+          }}
+        >
+          ←
+        </button>
+        {/* Scrollable Content */}
+        <div style={{
+          flex: 1,
+          padding: '2rem',
+          overflow: 'auto',
+          paddingBottom: '6rem',
+          maxWidth: '500px',
+          margin: '0 auto'
+        }}>
+          <div style={{ 
+            width: '100%', 
+            maxWidth: '400px',
+            background: 'rgba(255, 255, 255, 0.05)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '12px',
+            padding: '2rem',
+            backdropFilter: 'blur(10px)',
+            textAlign: 'center'
           }}>
-            Please wait while we load your investment details...
-          </p>
+            <div style={{
+              width: '60px',
+              height: '60px',
+              border: '4px solid #374151',
+              borderTop: '4px solid #00fb57',
+              borderRadius: '50%',
+              animation: 'spin 1s linear infinite',
+              margin: '0 auto 20px'
+            }}></div>
+            <h2 style={{
+              fontSize: '1.5rem',
+              fontWeight: '500',
+              color: '#FDFDFD',
+              margin: '0 0 10px 0'
+            }}>
+              Loading Deal Details
+            </h2>
+            <p style={{
+              fontSize: '14px',
+              color: '#9ca3af',
+              margin: 0
+            }}>
+              Please wait while we load your investment details...
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -174,214 +204,231 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
   if (!deal) {
     return (
       <div style={{
-        minHeight: '100vh',
+        height: '100vh',
+        width: '100vw',
         background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        flexDirection: 'column',
         color: 'white',
-        padding: '2rem'
+        overflow: 'hidden',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        boxSizing: 'border-box'
       }}>
-        <div style={{ 
-          width: '100%', 
-          maxWidth: '400px',
-          background: 'rgba(255, 255, 255, 0.05)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          borderRadius: '12px',
+        {/* Back Icon */}
+        <button 
+          onClick={onBack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '2rem',
+            cursor: 'pointer',
+            padding: '1rem',
+            alignSelf: 'flex-start',
+            zIndex: 10
+          }}
+        >
+          ←
+        </button>
+        {/* Scrollable Content */}
+        <div style={{
+          flex: 1,
           padding: '2rem',
-          backdropFilter: 'blur(10px)',
-          textAlign: 'center'
+          overflow: 'auto',
+          paddingBottom: '6rem',
+          maxWidth: '500px',
+          margin: '0 auto'
         }}>
-          <h2 style={{
-            fontSize: '1.5rem',
-            fontWeight: '500',
-            color: '#FDFDFD',
-            margin: '0 0 20px 0'
+          <div style={{ 
+            width: '100%', 
+            maxWidth: '400px',
+            background: 'rgba(255, 255, 255, 0.05)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '12px',
+            padding: '2rem',
+            backdropFilter: 'blur(10px)',
+            textAlign: 'center'
           }}>
-            Deal Not Found
-          </h2>
-          <button
-            onClick={onBack}
-            style={{
-              background: '#00fb57',
-              color: '#1a1a1a',
-              border: 'none',
-              padding: '12px 24px',
-              fontSize: '14px',
-              fontWeight: '600',
-              borderRadius: '6px',
-              cursor: 'pointer'
-            }}
-          >
-            Back to Dashboard
-          </button>
+            <h2 style={{
+              fontSize: '1.5rem',
+              fontWeight: '500',
+              color: '#FDFDFD',
+              margin: '0 0 20px 0'
+            }}>
+              Deal Not Found
+            </h2>
+            <button
+              onClick={onBack}
+              style={{
+                background: '#00fb57',
+                color: '#1a1a1a',
+                border: 'none',
+                padding: '12px 24px',
+                fontSize: '14px',
+                fontWeight: '600',
+                borderRadius: '6px',
+                cursor: 'pointer'
+              }}
+            >
+              Back to Dashboard
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <>
+    <div style={{
+      height: '100vh',
+      width: '100vw',
+      background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+      display: 'flex',
+      flexDirection: 'column',
+      color: 'white',
+      overflow: 'hidden',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      boxSizing: 'border-box'
+    }}>
+      {/* Back Icon */}
+      <button 
+        onClick={onBack}
+        style={{
+          background: 'transparent',
+          border: 'none',
+          color: '#9ca3af',
+          fontSize: '2rem',
+          cursor: 'pointer',
+          padding: '1rem',
+          alignSelf: 'flex-start',
+          zIndex: 10
+        }}
+      >
+        ←
+      </button>
+      {/* Scrollable Content */}
       <div style={{
-        minHeight: '100vh',
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: 'white',
-        padding: '2rem'
+        flex: 1,
+        padding: '2rem',
+        overflow: 'auto',
+        paddingBottom: '6rem',
+        maxWidth: '500px',
+        margin: '0 auto'
       }}>
-        <div style={{ 
-          width: '100%', 
-          maxWidth: '400px',
-          background: 'rgba(255, 255, 255, 0.05)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          borderRadius: '12px',
-          padding: '2rem',
-          backdropFilter: 'blur(10px)',
-          maxHeight: '90vh',
-          overflow: 'auto'
+        <h1 style={{
+          color: '#fff',
+          fontSize: '1.8rem',
+          fontWeight: 'bold',
+          margin: '0 0 2rem 0'
         }}>
-          {/* Header */}
-          <button 
-            onClick={onBack}
-            style={{
-              background: 'transparent',
-              border: 'none',
+          💰 Commit Investment
+        </h1>
+
+        {/* Deal Info Card */}
+        <div>
+          <h2 style={{
+            color: '#00fb57',
+            fontSize: '1.2rem',
+            fontWeight: '600',
+            margin: '0 0 0.5rem 0'
+          }}>
+            {deal.title}
+          </h2>
+          <p style={{
+            color: '#ccc',
+            fontSize: '14px',
+            margin: '0 0 2rem 0',
+            lineHeight: '1.5'
+          }}>
+            {deal.description}
+          </p>
+        </div>
+
+        {/* Investment Input Section */}
+        <div>
+          <h3 style={{
+            color: '#fff',
+            fontSize: '1.2rem',
+            fontWeight: '600',
+            margin: '0 0 1rem 0'
+          }}>
+            📊 Investment Amount
+          </h3>
+          <div style={{ marginBottom: '1rem' }}>
+            <label style={{
               color: '#9ca3af',
-              fontSize: '1.5rem',
-              cursor: 'pointer',
-              marginBottom: '1rem'
+              fontSize: '14px',
+              marginBottom: '8px',
+              display: 'block',
+              fontWeight: '600'
+            }}>
+              Enter amount in INR
+            </label>
+            <input
+              type="text"
+              value={investmentAmount}
+              onChange={(e) => handleInvestmentAmountChange(e.target.value)}
+              placeholder="0"
+              style={{
+                width: '100%',
+                padding: '14px',
+                fontSize: '18px',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                borderRadius: '8px',
+                color: '#fff',
+                outline: 'none',
+                fontWeight: 'bold',
+                boxSizing: 'border-box'
+              }}
+            />
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginTop: '8px'
+            }}>
+              <p style={{
+                color: '#9ca3af',
+                fontSize: '12px',
+                margin: '0'
+              }}>
+                Minimum: {formatCurrency(deal.minimum_investment)}
+              </p>
+              {parsedAmount > 0 && (
+                <p style={{
+                  color: parsedAmount >= deal.minimum_investment ? '#00fb57' : '#ef4444',
+                  fontSize: '14px',
+                  margin: '0',
+                  fontWeight: '600'
+                }}>
+                  {parsedAmount >= deal.minimum_investment ? '✓ Valid Amount' : '✗ Below Minimum'}
+                </p>
+              )}
+            </div>
+          </div>
+          <button
+            onClick={handleInputChange}
+            disabled={!isInvestmentValid}
+            style={{
+              backgroundColor: isInvestmentValid ? '#00fb57' : 'rgba(255, 255, 255, 0.1)',
+              color: isInvestmentValid ? '#1a1a1a' : '#9ca3af',
+              fontSize: '16px',
+              fontWeight: 'bold',
+              padding: '14px',
+              border: isInvestmentValid ? 'none' : '1px solid rgba(255, 255, 255, 0.3)',
+              borderRadius: '8px',
+              cursor: isInvestmentValid ? 'pointer' : 'not-allowed',
+              width: '100%',
+              transition: 'all 0.3s ease'
             }}
           >
-            ← Back
+            📈 Calculate Investment Summary
           </button>
-
-          <h1 style={{
-            color: '#fff',
-            fontSize: '1.8rem',
-            fontWeight: 'bold',
-            margin: '0 0 2rem 0'
-          }}>
-            💰 Commit Investment
-          </h1>
-
-          {/* Deal Info Card */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            borderRadius: '8px',
-            padding: '1.5rem',
-            marginBottom: '2rem',
-            border: '1px solid rgba(255, 255, 255, 0.2)'
-          }}>
-            <h2 style={{
-              color: '#00fb57',
-              fontSize: '1.2rem',
-              fontWeight: '600',
-              margin: '0 0 0.5rem 0'
-            }}>
-              {deal.title}
-            </h2>
-            <p style={{
-              color: '#ccc',
-              fontSize: '14px',
-              margin: '0',
-              lineHeight: '1.5'
-            }}>
-              {deal.description}
-            </p>
-          </div>
-
-          {/* Investment Input Card */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            borderRadius: '8px',
-            padding: '1.5rem',
-            marginBottom: '2rem',
-            border: '1px solid rgba(255, 255, 255, 0.2)'
-          }}>
-            <h3 style={{
-              color: '#fff',
-              fontSize: '1.2rem',
-              fontWeight: '600',
-              margin: '0 0 1rem 0'
-            }}>
-              📊 Investment Amount
-            </h3>
-            
-            <div style={{ marginBottom: '1rem' }}>
-              <label style={{
-                color: '#9ca3af',
-                fontSize: '14px',
-                marginBottom: '8px',
-                display: 'block',
-                fontWeight: '600'
-              }}>
-                Enter amount in INR
-              </label>
-              <input
-                type="text"
-                value={investmentAmount}
-                onChange={(e) => handleInvestmentAmountChange(e.target.value)}
-                placeholder="0"
-                style={{
-                  width: '100%',
-                  padding: '14px',
-                  fontSize: '18px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  border: '1px solid rgba(255, 255, 255, 0.3)',
-                  borderRadius: '8px',
-                  color: '#fff',
-                  outline: 'none',
-                  fontWeight: 'bold',
-                  boxSizing: 'border-box'
-                }}
-              />
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginTop: '8px'
-              }}>
-                <p style={{
-                  color: '#9ca3af',
-                  fontSize: '12px',
-                  margin: '0'
-                }}>
-                  Minimum: {formatCurrency(deal.minimum_investment)}
-                </p>
-                {parsedAmount > 0 && (
-                  <p style={{
-                    color: '#00fb57',
-                    fontSize: '14px',
-                    margin: '0',
-                    fontWeight: '600'
-                  }}>
-                    ✓ Valid Amount
-                  </p>
-                )}
-              </div>
-            </div>
-
-            <button
-              onClick={handleInputChange}
-              disabled={!isInvestmentValid}
-              style={{
-                backgroundColor: isInvestmentValid ? '#00fb57' : 'rgba(255, 255, 255, 0.1)',
-                color: isInvestmentValid ? '#1a1a1a' : '#9ca3af',
-                fontSize: '16px',
-                fontWeight: 'bold',
-                padding: '14px',
-                border: isInvestmentValid ? 'none' : '1px solid rgba(255, 255, 255, 0.3)',
-                borderRadius: '8px',
-                cursor: isInvestmentValid ? 'pointer' : 'not-allowed',
-                width: '100%',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              📈 Calculate Investment Summary
-            </button>
-          </div>
         </div>
       </div>
 
@@ -546,7 +593,7 @@ const CommitInvestment: React.FC<CommitInvestmentProps> = ({ dealId, showNotific
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
